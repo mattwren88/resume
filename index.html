@@ -61,6 +61,10 @@
     <div class="bg-shape bg-shape-two"></div>
 
     <main class="page">
+      <button class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle__label">Toggle theme</span>
+        <span class="theme-toggle__icon" aria-hidden="true">☀︎</span>
+      </button>
       <header class="hero">
         <div class="hero-identity">
           <div class="hero-photo">
@@ -260,5 +264,36 @@
         </section>
       </section>
     </main>
+    <script>
+      const toggle = document.querySelector(".theme-toggle");
+      const icon = toggle?.querySelector(".theme-toggle__icon");
+      const stored = localStorage.getItem("theme");
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      const prefersDark = media.matches;
+      const initial = stored || (prefersDark ? "dark" : "light");
+      document.documentElement.dataset.theme = initial;
+
+      const updateToggle = () => {
+        const isDark = document.documentElement.dataset.theme === "dark";
+        toggle?.setAttribute("aria-pressed", String(isDark));
+        if (icon) icon.textContent = isDark ? "☾" : "☀︎";
+      };
+
+      updateToggle();
+
+      toggle?.addEventListener("click", () => {
+        const next =
+          document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("theme", next);
+        updateToggle();
+      });
+
+      media.addEventListener("change", (event) => {
+        if (localStorage.getItem("theme")) return;
+        document.documentElement.dataset.theme = event.matches ? "dark" : "light";
+        updateToggle();
+      });
+    </script>
   </body>
 </html>
