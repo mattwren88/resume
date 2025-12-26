@@ -424,6 +424,127 @@ h3 {
   }
 }
 
+@media print {
+  @page {
+    size: letter;
+    margin: 0.25in;
+  }
+
+  :root {
+    --text-xs: 0.52rem;
+    --text-sm: 0.62rem;
+    --text-md: 0.74rem;
+    --text-lg: 0.82rem;
+    --text-xl: 0.92rem;
+    --text-hero: 1.7rem;
+  }
+
+  :where(body) {
+    background: #fff;
+    color: #000;
+    line-height: 1.22;
+  }
+
+  .noise,
+  .bg-shape,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  .page {
+    padding: 0;
+    max-width: none;
+  }
+
+  .hero {
+    gap: 8px;
+  }
+
+  .hero-photo {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #ddd;
+    box-shadow: none;
+  }
+
+  .grid {
+    grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .card {
+    --card-pad: 10px;
+    background: transparent;
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+
+  .section + .section {
+    margin-top: 8px;
+  }
+
+  .divider {
+    margin: 6px 0;
+  }
+
+  .hero-links {
+    gap: 4px;
+  }
+
+  .pill-list li {
+    padding: 2px 6px;
+    font-size: var(--text-xs);
+  }
+
+  .pill-list,
+  .stack-list {
+    gap: 4px;
+  }
+
+  .stack-list,
+  .hero-links,
+  .timeline-heading {
+    font-size: var(--text-xs);
+  }
+
+  .timeline {
+    gap: 6px;
+  }
+
+  .project-grid {
+    gap: 6px;
+  }
+
+  .project-grid article {
+    padding: 8px;
+  }
+
+  h1 {
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    margin-bottom: 6px;
+  }
+
+  p {
+    margin-bottom: 6px;
+  }
+
+  .card,
+  .timeline article,
+  .project-grid article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 @media (max-width: 980px) {
   .hero {
     flex-direction: column;
