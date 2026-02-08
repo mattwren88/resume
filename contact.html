@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Matthew Wren</title>
+    <meta
+      name="description"
+      content="Start a website, SEO, accessibility, or performance project with Matthew Wren."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="themes.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="bg-shape bg-shape-one"></div>
+    <div class="bg-shape bg-shape-two"></div>
+
+    <main class="page">
+      <button class="theme-toggle" type="button">
+        <span class="theme-toggle__label">Cycle theme</span>
+        <span class="theme-toggle__icon" aria-hidden="true">☀︎</span>
+      </button>
+
+      <header class="top-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Matthew Wren</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a aria-current="page" href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <div class="page-content">
+        <section class="card section row">
+          <p class="eyebrow">Contact</p>
+          <h1>Tell me what you need.</h1>
+          <p class="role">
+            I will review your details and follow up with clear next steps.
+          </p>
+          <p>
+            This form uses Formspree for secure delivery. Replace the form action URL
+            with your own Formspree endpoint.
+          </p>
+        </section>
+
+        <section class="card section">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New Website Inquiry" />
+            <input type="hidden" name="_next" value="https://www.matthew-wren.com/thanks.html" />
+            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <label>
+                Name
+                <input type="text" name="name" required />
+              </label>
+
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+
+              <label>
+                Business Name
+                <input type="text" name="business" />
+              </label>
+
+              <label>
+                Current Website (if any)
+                <input type="url" name="website" placeholder="https://" />
+              </label>
+
+              <label>
+                Budget Range
+                <select name="budget" required>
+                  <option value="" selected disabled>Select budget</option>
+                  <option value="starter">Starter project</option>
+                  <option value="growth">Growth project</option>
+                  <option value="larger">Larger project</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </label>
+
+              <label>
+                Timeline
+                <select name="timeline" required>
+                  <option value="" selected disabled>Select timeline</option>
+                  <option value="asap">ASAP</option>
+                  <option value="1-2 months">1-2 months</option>
+                  <option value="2-4 months">2-4 months</option>
+                  <option value="exploring">Just exploring options</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Project Details
+              <textarea
+                name="message"
+                rows="7"
+                required
+                placeholder="What are you trying to improve?"
+              ></textarea>
+            </label>
+
+            <button class="button" type="submit">Send Inquiry</button>
+          </form>
+        </section>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.linkedin.com/in/matthew-wren-98803b20/">LinkedIn</a>
+        </div>
+        <p>&copy; <span data-current-year></span> Matthew Wren</p>
+      </footer>
+    </main>
+    <script src="scripts/site.js"></script>
+  </body>
+</html>

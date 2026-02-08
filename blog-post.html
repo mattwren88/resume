@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Article | Matthew Wren</title>
+    <meta name="description" content="Blog article by Matthew Wren." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="themes.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="bg-shape bg-shape-one"></div>
+    <div class="bg-shape bg-shape-two"></div>
+
+    <main class="page">
+      <button class="theme-toggle" type="button">
+        <span class="theme-toggle__label">Cycle theme</span>
+        <span class="theme-toggle__icon" aria-hidden="true">☀︎</span>
+      </button>
+
+      <header class="top-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Matthew Wren</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a aria-current="page" href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <div class="page-content">
+        <article class="card section row markdown-article" data-markdown-container>
+          <p>Loading article...</p>
+        </article>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.linkedin.com/in/matthew-wren-98803b20/">LinkedIn</a>
+        </div>
+        <p>&copy; <span data-current-year></span> Matthew Wren</p>
+      </footer>
+    </main>
+    <script src="scripts/site.js"></script>
+    <script src="scripts/blog.js"></script>
+  </body>
+</html>

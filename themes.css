@@ -1,0 +1,184 @@
+:root,
+[data-theme="heritage"] {
+  --font-sans: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", "Georgia", serif;
+  --ink: #161515;
+  --muted: #5a4b4a;
+  --accent: #d84727;
+  --accent-soft: rgba(216, 71, 39, 0.15);
+  --surface: rgba(255, 255, 255, 0.75);
+  --line: rgba(22, 21, 21, 0.12);
+  --shadow: 0 30px 90px rgba(22, 21, 21, 0.15);
+  --shadow-soft: 0 20px 60px rgba(22, 21, 21, 0.1);
+  --bg-body: radial-gradient(circle at top, #fdf7ef 0%, #efe3d7 55%, #e7d2bf 100%);
+  --shape-one-bg: linear-gradient(140deg, #ffb58b, #f36d4e);
+  --shape-one-opacity: 0.5;
+  --shape-two-bg: linear-gradient(140deg, #ffd18a, #e3a858);
+  --shape-two-opacity: 0.45;
+  --card-border: rgba(255, 255, 255, 0.7);
+  --hero-photo-border: rgba(255, 255, 255, 0.8);
+  --hero-photo-shadow: 0 18px 40px rgba(22, 21, 21, 0.18);
+  --project-item-bg: rgba(255, 255, 255, 0.5);
+  --project-item-border: rgba(22, 21, 21, 0.08);
+  --button-primary-text: #fff;
+  --type-weight-brand: 700;
+  --type-weight-h1: 600;
+  --type-weight-h2: 500;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+}
+
+[data-theme="editorial"] {
+  --font-sans: "Source Serif 4", "Georgia", serif;
+  --font-serif: "Source Serif 4", "Georgia", serif;
+  --ink: #191312;
+  --muted: #4f3f39;
+  --accent: #6f1434;
+  --accent-soft: rgba(111, 20, 52, 0.15);
+  --surface: rgba(251, 245, 235, 0.94);
+  --line: rgba(25, 19, 18, 0.24);
+  --shadow: 0 8px 24px rgba(25, 19, 18, 0.05);
+  --shadow-soft: none;
+  --bg-body: linear-gradient(180deg, #f8efe2 0%, #ead7c0 100%);
+  --shape-one-bg: linear-gradient(145deg, #86204f, #b55d56);
+  --shape-one-opacity: 0.16;
+  --shape-two-bg: linear-gradient(145deg, #d7a35f, #7b4f2b);
+  --shape-two-opacity: 0.14;
+  --card-border: rgba(25, 19, 18, 0.18);
+  --hero-photo-border: rgba(255, 251, 244, 1);
+  --hero-photo-shadow: 0 8px 20px rgba(25, 19, 18, 0.1);
+  --project-item-bg: rgba(255, 251, 244, 0.96);
+  --project-item-border: rgba(25, 19, 18, 0.16);
+  --button-primary-text: #fff7f3;
+  --type-weight-brand: 600;
+  --type-weight-h1: 400;
+  --type-weight-h2: 500;
+  --text-hero: clamp(3.1rem, 4.6vw, 5rem);
+  --text-md: 1.03rem;
+  --radius-lg: 3px;
+  --radius-md: 2px;
+  --radius-pill: 999px;
+}
+
+[data-theme="brutalist"] {
+  --font-sans: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-serif: "Space Grotesk", "Segoe UI", sans-serif;
+  --ink: #0b0b0b;
+  --muted: #1d1d1d;
+  --accent: #ff3a00;
+  --accent-soft: rgba(255, 58, 0, 0.2);
+  --surface: rgba(255, 255, 255, 1);
+  --line: rgba(11, 11, 11, 0.95);
+  --shadow: 10px 10px 0 rgba(11, 11, 11, 0.9);
+  --shadow-soft: 6px 6px 0 rgba(11, 11, 11, 0.82);
+  --bg-body: linear-gradient(135deg, #ffffff 0%, #ececec 48%, #ffffff 100%);
+  --shape-one-bg: linear-gradient(145deg, #ff3000, #ffd000);
+  --shape-one-opacity: 0.3;
+  --shape-two-bg: linear-gradient(145deg, #004dff, #00b7ff);
+  --shape-two-opacity: 0.25;
+  --card-border: rgba(11, 11, 11, 1);
+  --hero-photo-border: rgba(11, 11, 11, 0.9);
+  --hero-photo-shadow: 8px 8px 0 rgba(11, 11, 11, 0.9);
+  --project-item-bg: rgba(255, 255, 255, 1);
+  --project-item-border: rgba(11, 11, 11, 0.95);
+  --button-primary-text: #ffffff;
+  --type-weight-brand: 700;
+  --type-weight-h1: 700;
+  --type-weight-h2: 600;
+  --text-hero: clamp(2.7rem, 4.2vw, 4.3rem);
+  --radius-lg: 2px;
+  --radius-md: 2px;
+  --radius-pill: 2px;
+}
+
+[data-theme="editorial"] .noise {
+  opacity: 0.2;
+  mix-blend-mode: soft-light;
+}
+
+[data-theme="editorial"] .top-nav {
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="editorial"] .brand {
+  letter-spacing: 0.03em;
+}
+
+[data-theme="editorial"] .card,
+[data-theme="editorial"] .project-grid article {
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+[data-theme="editorial"] .card {
+  border-width: 1px;
+}
+
+[data-theme="editorial"] .button {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+}
+
+[data-theme="editorial"] .timeline article {
+  border-left-width: 1px;
+}
+
+[data-theme="brutalist"] .noise {
+  opacity: 0.08;
+  mix-blend-mode: normal;
+}
+
+[data-theme="brutalist"] .bg-shape {
+  border-radius: 0;
+  filter: none;
+  width: 290px;
+  height: 290px;
+}
+
+[data-theme="brutalist"] .top-nav {
+  border: 3px solid var(--line);
+  padding: 12px;
+  background: var(--surface);
+}
+
+[data-theme="brutalist"] .nav-links a {
+  border: 2px solid var(--line);
+}
+
+[data-theme="brutalist"] .nav-pill-indicator {
+  border-width: 3px;
+  box-shadow: none;
+  background: var(--accent-soft);
+}
+
+[data-theme="brutalist"] .card,
+[data-theme="brutalist"] .project-grid article {
+  border-width: 3px;
+  backdrop-filter: none;
+}
+
+[data-theme="brutalist"] .button {
+  border: 3px solid var(--line);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 4px 4px 0 rgba(11, 11, 11, 0.82);
+}
+
+[data-theme="brutalist"] .button.button-secondary {
+  background: var(--surface);
+}
+
+[data-theme="brutalist"] .hero .hero-photo {
+  border-width: 3px;
+}
+
+[data-theme="brutalist"] .timeline article {
+  border-left-width: 4px;
+}
+
+[data-theme="brutalist"] .site-footer {
+  border-top-width: 3px;
+}
