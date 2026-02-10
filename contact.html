@@ -30,7 +30,40 @@
       </button>
 
       <header class="top-nav" aria-label="Primary">
-        <a class="brand" href="index.html">Matthew Wren</a>
+        <a class="brand" href="index.html">
+          <svg width="300" height="160" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="mw-logo" aria-hidden="true">
+            <!-- Left Brace { -->
+            <path d="M55 45 C 35 45, 25 65, 25 85 L 25 90 C 25 98, 15 100, 10 100 C 15 100, 25 102, 25 110 L 25 115 C 25 135, 35 155, 55 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!-- Right Brace } -->
+            <path d="M305 45 C 325 45, 335 65, 335 85 L 335 90 C 335 98, 345 100, 350 100 C 345 100, 335 102, 335 110 L 335 115 C 335 135, 325 155, 305 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!--
+                The Ambigram Logic:
+                Character 1 (M) and Character 2 (W) are the EXACT same path.
+                Character 2 is simply rotated 180 degrees around the logo center.
+            -->
+            <g id="initials-group">
+              <!-- Letter 1 (The M) -->
+              <path d="M110 135 L110 65 L140 115 L170 65 L170 135"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+
+              <!-- Letter 2 (The W - rotated version of the M path) -->
+              <!-- We use a transform that rotates the shape 180 degrees around the center (180, 100) -->
+              <path d="M190 65 L190 135 L220 85 L250 135 L250 65"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+            </g>
+          </svg>
+          Matthew Wren
+        </a>
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
@@ -41,7 +74,7 @@
 
       <div class="page-content">
         <section class="card section row">
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">Get in Touch</p>
           <h1>Tell me what you need.</h1>
           <p class="role">
             I will review your details and follow up with clear next steps.

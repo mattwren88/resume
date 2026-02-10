@@ -44,6 +44,7 @@ const setupNavSnap = () => {
     return;
   }
 
+  // Create main indicator (stays on active page)
   let indicator = nav.querySelector('.nav-pill-indicator');
   if (!indicator) {
     indicator = document.createElement('span');
@@ -52,17 +53,99 @@ const setupNavSnap = () => {
     nav.prepend(indicator);
   }
 
+  // Create ghost indicator (moves on hover)
+  let ghost = nav.querySelector('.nav-pill-ghost');
+  if (!ghost) {
+    ghost = document.createElement('span');
+    ghost.className = 'nav-pill-ghost';
+    ghost.setAttribute('aria-hidden', 'true');
+    nav.prepend(ghost);
+  }
+
+  const updatePill = (pill, targetLink, noTransition = false) => {
+    const navRect = nav.getBoundingClientRect();
+    const targetRect = targetLink.getBoundingClientRect();
+    const x = targetRect.left - navRect.left;
+
+    if (noTransition) {
+      const currentTransition = pill.style.transition;
+      pill.style.transition = 'none';
+      pill.style.width = `${targetRect.width}px`;
+      pill.style.transform = `translateX(${x}px)`;
+      // Force reflow to apply the no-transition state
+      pill.offsetHeight;
+      pill.style.transition = currentTransition;
+    } else {
+      pill.style.width = `${targetRect.width}px`;
+      pill.style.transform = `translateX(${x}px)`;
+    }
+  };
+
   const activeLink = nav.querySelector('a[aria-current="page"]') || links[0];
   if (!activeLink) {
     return;
   }
 
-  const navRect = nav.getBoundingClientRect();
-  const activeRect = activeLink.getBoundingClientRect();
-  const x = activeRect.left - navRect.left;
+  // Check if we're coming from a navigation click
+  const previousPageUrl = sessionStorage.getItem('nav-previous-page');
+  if (previousPageUrl) {
+    sessionStorage.removeItem('nav-previous-page');
 
-  indicator.style.width = `${activeRect.width}px`;
-  indicator.style.transform = `translateX(${x}px)`;
+    // Find the link that matches the previous page
+    const previousLink = links.find(link => {
+      try {
+        const linkUrl = new URL(link.href, window.location.href);
+        const prevUrl = new URL(previousPageUrl, window.location.href);
+        return linkUrl.pathname === prevUrl.pathname;
+      } catch {
+        return false;
+      }
+    });
+
+    if (previousLink && previousLink !== activeLink) {
+      // Start at previous link position (no transition)
+      updatePill(indicator, previousLink, true);
+      // Animate to active link position
+      requestAnimationFrame(() => {
+        updatePill(indicator, activeLink);
+      });
+    } else {
+      // Just set position (no animation)
+      updatePill(indicator, activeLink, true);
+    }
+  } else {
+    // Initial load or direct visit, no animation
+    updatePill(indicator, activeLink, true);
+  }
+
+  // Show ghost pill on hover
+  links.forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      ghost.classList.add('is-visible');
+      updatePill(ghost, link);
+    });
+  });
+
+  // Hide ghost pill when mouse leaves nav
+  nav.addEventListener('mouseleave', () => {
+    ghost.classList.remove('is-visible');
+  });
+
+  // Store current page when clicking nav links
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#')) {
+        try {
+          const url = new URL(link.href, window.location.href);
+          if (url.origin === window.location.origin) {
+            // Store the current page URL so next page knows where we came from
+            sessionStorage.setItem('nav-previous-page', window.location.href);
+          }
+        } catch {}
+      }
+    });
+  });
 };
 
 const setupPageTransitions = () => {
@@ -109,7 +192,7 @@ const setupPageTransitions = () => {
     document.body.classList.add('is-leaving');
     window.setTimeout(() => {
       window.location.href = url.href;
-    }, 185);
+    }, 160);
   });
 };
 

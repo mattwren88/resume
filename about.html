@@ -30,7 +30,40 @@
       </button>
 
       <header class="top-nav" aria-label="Primary">
-        <a class="brand" href="index.html">Matthew Wren</a>
+        <a class="brand" href="index.html">
+          <svg width="300" height="160" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="mw-logo" aria-hidden="true">
+            <!-- Left Brace { -->
+            <path d="M55 45 C 35 45, 25 65, 25 85 L 25 90 C 25 98, 15 100, 10 100 C 15 100, 25 102, 25 110 L 25 115 C 25 135, 35 155, 55 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!-- Right Brace } -->
+            <path d="M305 45 C 325 45, 335 65, 335 85 L 335 90 C 335 98, 345 100, 350 100 C 345 100, 335 102, 335 110 L 335 115 C 335 135, 325 155, 305 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!--
+                The Ambigram Logic:
+                Character 1 (M) and Character 2 (W) are the EXACT same path.
+                Character 2 is simply rotated 180 degrees around the logo center.
+            -->
+            <g id="initials-group">
+              <!-- Letter 1 (The M) -->
+              <path d="M110 135 L110 65 L140 115 L170 65 L170 135"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+
+              <!-- Letter 2 (The W - rotated version of the M path) -->
+              <!-- We use a transform that rotates the shape 180 degrees around the center (180, 100) -->
+              <path d="M190 65 L190 135 L220 85 L250 135 L250 65"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+            </g>
+          </svg>
+          Matthew Wren
+        </a>
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a aria-current="page" href="about.html">About</a>
@@ -46,32 +79,40 @@
               <img src="images/mattwren.webp" alt="Matthew Wren" />
             </div>
             <div class="hero-copy">
-              <p class="eyebrow">About</p>
-              <h1>Direct, practical web development.</h1>
-              <p class="role">Kind communication, clear priorities, no fluff.</p>
+              <p class="eyebrow">Background</p>
+              <h1>About</h1>
+              <p class="role">Web developer working with colleges, universities, and organizations on CMS implementations, component development, and technical documentation.</p>
             </div>
           </div>
         </section>
 
         <section class="card section">
-          <h2>Who I Help</h2>
+          <h2>What I Do</h2>
           <p>
-            I work with local businesses that either have an outdated site or no site
-            at all. If your website does not represent the quality of your business,
-            that is the gap I help close.
+            I work with colleges, universities, and organizations on web development projects—
+            building CMS implementations, developing component libraries, conducting technical
+            audits, and creating documentation that helps teams manage their web presence
+            independently.
           </p>
         </section>
 
         <section class="card section">
           <h2>Experience Since 2011</h2>
           <p>
-            I have been in web development since 2011. In my day job, I support web
-            work for major colleges through Hannon Hill, including CMS, integration,
-            and support-heavy technical environments.
+            I have been in web development since 2011. In my current role at Hannon Hill,
+            I support web ecosystems for dozens of colleges and universities—writing technical
+            documentation, troubleshooting CMS issues, building custom components, conducting
+            performance audits, and managing full site integrations from design to deployment.
           </p>
           <p>
-            That experience carries into my client work: structured process,
-            reliability, and clean implementation.
+            Recent projects include converting 20+ Figma designs into production-ready components,
+            architecting 50+ custom CMS components with complete documentation, conducting technical
+            audits covering 400+ pages, and building automated content systems with search and
+            filtering capabilities.
+          </p>
+          <p>
+            I apply the same standards across all projects—structured workflows, measurable
+            results, and code that's maintainable without ongoing developer dependency.
           </p>
         </section>
 
@@ -84,6 +125,12 @@
                 <h3>Web Development Support and Services Specialist · Hannon Hill</h3>
               </div>
               <p>Full-time · Atlanta, Georgia, United States · Remote</p>
+              <ul>
+                <li>Write and maintain technical documentation covering CMS workflows, API integrations, and troubleshooting guides</li>
+                <li>Handle support tickets addressing a wide range of technical issues for higher education clients</li>
+                <li>Contributed to large-scale knowledge base refresh project improving documentation quality and accessibility</li>
+                <li>Support dozens of colleges and universities with CMS implementations, component development, and site migrations</li>
+              </ul>
             </article>
             <article>
               <div class="timeline-heading">
@@ -91,6 +138,12 @@
                 <h3>Web Designer/Developer · University of Scranton</h3>
               </div>
               <p>Full-time · Scranton, Pennsylvania, United States · On-site</p>
+              <ul>
+                <li>Designed and developed The Scranton Journal digital publication from scratch with focus on performance, accessibility, and maintainability</li>
+                <li>Integrated University News Website into Cascade CMS using Velocity techniques, Cascade API, and implemented mega-menu navigation system</li>
+                <li>Converted non-responsive publication website to responsive design using Bootstrap, SCSS, and XSLT; presented approach at Cascade User Conference 2016</li>
+                <li>Developed custom components and page templates with comprehensive documentation enabling non-technical staff to manage complex content workflows</li>
+              </ul>
             </article>
             <article>
               <div class="timeline-heading">
@@ -98,6 +151,52 @@
                 <h3>Digital Director · Entercom</h3>
               </div>
               <p>Pittston, PA</p>
+              <ul>
+                <li>Managed digital presence for multiple radio station properties</li>
+                <li>Coordinated web content, social media, and promotional campaigns</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="card section">
+          <h2>Selected Projects</h2>
+          <div class="timeline">
+            <article>
+              <h3>Technical Implementation Audits</h3>
+              <p>
+                Conducted comprehensive audits for multiple universities covering performance optimization (Unlighthouse, Core Web Vitals),
+                accessibility compliance (WCAG), SEO, CMS architecture, and browser compatibility. Delivered strategic recommendations
+                for performance improvements and long-term maintainability.
+              </p>
+            </article>
+            <article>
+              <h3>Xavier University Component Library</h3>
+              <p>
+                Architected 50+ custom CMS components organized into seven categories. Created complete developer documentation
+                covering architecture, fields, rendered output, accessibility, and responsive behavior for each component.
+              </p>
+            </article>
+            <article>
+              <h3>Butte College CMS Integration</h3>
+              <p>
+                Built comprehensive implementation with 20+ custom components including decision trees, Instagram API integration,
+                responsive image systems, YouTube embeds, and drag-and-drop page builder. Created complete documentation for non-technical editors.
+              </p>
+            </article>
+            <article>
+              <h3>Lincoln University Publications System</h3>
+              <p>
+                Designed publications management system with search, category filtering, sorting, and pagination. Supports dual workflows
+                (page-based or direct file links) with comprehensive editor documentation.
+              </p>
+            </article>
+            <article>
+              <h3>University of Scranton Digital Publications</h3>
+              <p>
+                Developed The Scranton Journal from scratch with performance and accessibility focus. Converted publication to responsive
+                design using Bootstrap and SCSS. Presented approach at Cascade User Conference 2016.
+              </p>
             </article>
           </div>
         </section>
@@ -120,10 +219,11 @@
         </section>
 
         <section class="card section">
-          <h2>Local Connection</h2>
+          <h2>Approach</h2>
           <p>
-            I am based in Scranton and active in the local community through music and
-            cycling. I value long-term local relationships and straightforward work.
+            I focus on clear communication, structured processes, and code that teams
+            can maintain independently. Projects should solve actual problems without
+            creating technical debt.
           </p>
         </section>
       </div>

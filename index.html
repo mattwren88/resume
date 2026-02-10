@@ -41,7 +41,40 @@
       </button>
 
       <header class="top-nav" aria-label="Primary">
-        <a class="brand" href="index.html">Matthew Wren</a>
+        <a class="brand" href="index.html">
+          <svg width="300" height="160" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="mw-logo" aria-hidden="true">
+            <!-- Left Brace { -->
+            <path d="M55 45 C 35 45, 25 65, 25 85 L 25 90 C 25 98, 15 100, 10 100 C 15 100, 25 102, 25 110 L 25 115 C 25 135, 35 155, 55 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!-- Right Brace } -->
+            <path d="M305 45 C 325 45, 335 65, 335 85 L 335 90 C 335 98, 345 100, 350 100 C 345 100, 335 102, 335 110 L 335 115 C 335 135, 325 155, 305 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+            <!--
+                The Ambigram Logic:
+                Character 1 (M) and Character 2 (W) are the EXACT same path.
+                Character 2 is simply rotated 180 degrees around the logo center.
+            -->
+            <g id="initials-group">
+              <!-- Letter 1 (The M) -->
+              <path d="M110 135 L110 65 L140 115 L170 65 L170 135"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+
+              <!-- Letter 2 (The W - rotated version of the M path) -->
+              <!-- We use a transform that rotates the shape 180 degrees around the center (180, 100) -->
+              <path d="M190 65 L190 135 L220 85 L250 135 L250 65"
+                    stroke="currentColor"
+                    stroke-width="18"
+                    fill="none"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"/>
+            </g>
+          </svg>
+          Matthew Wren
+        </a>
         <nav class="nav-links">
           <a aria-current="page" href="index.html">Home</a>
           <a href="about.html">About</a>
@@ -52,14 +85,13 @@
 
       <div class="page-content">
         <section class="card landing-hero">
-          <p class="eyebrow">Local Business Web Development</p>
-          <h1>Your business should not look outdated online.</h1>
+          <p class="eyebrow">Web Development</p>
+          <h1>Modern, maintainable websites built without unnecessary complexity.</h1>
           <p class="role">
-            I help local businesses launch modern websites, improve SEO and site
-            experience, and make content updates easier for non-technical teams.
+            Modern website builds, SEO and performance improvements, accessibility updates, and simpler content management workflows.
           </p>
           <div class="button-row">
-            <a class="button" href="contact.html">Get a free quote</a>
+            <a class="button" href="contact.html">Get in touch</a>
             <a class="button button-secondary" href="about.html">About me and my experience</a>
           </div>
         </section>
@@ -68,88 +100,76 @@
           <article class="card service-card">
             <h2>Website Rebuilds and New Builds</h2>
             <p>
-              If your site is outdated or you do not have one yet, I build a clear,
-              fast, mobile-friendly website that reflects your business today.
+              Replace your outdated site with a fast, mobile-responsive website built
+              to modern standards—no templates, no bloat, just focused code that works.
             </p>
           </article>
           <article class="card service-card">
             <h2>SEO and Site Experience Upgrades</h2>
             <p>
-              Better structure, metadata, page hierarchy, performance, and UX so
-              customers can find you and trust you quickly.
+              Fix site structure, missing metadata, slow load times, and navigation issues
+              that keep customers from finding you or trusting what they see.
             </p>
           </article>
           <article class="card service-card">
             <h2>Accessibility and Easier Editing</h2>
             <p>
-              Practical accessibility updates and page editing workflows that are
-              simple for non-technical staff without forcing clunky tools.
+              Make your site usable for everyone with WCAG-compliant updates, and set up
+              editing workflows your team can use without technical training.
             </p>
           </article>
         </section>
 
         <section class="card section">
-          <h2>How I Can Help Your Business</h2>
+          <h2>What I Can Do</h2>
           <div class="capability-grid">
             <article class="capability-card" tabindex="0">
-              <h3>Modern Website Setup</h3>
-              <p>Get a clean, mobile-friendly site that matches your business and builds trust.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Better Google Visibility</h3>
-              <p>Improve your pages so local customers can find you more easily in search.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Faster Site Experience</h3>
-              <p>Speed up key pages so visitors stay longer and are more likely to contact you.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Simple Page Editing</h3>
-              <p>Use an update workflow your team can handle without advanced technical skills.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Accessibility Improvements</h3>
-              <p>Make your site easier to use for more people and reduce usability barriers.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Clear Guidance in Plain English</h3>
-              <p>I explain what matters, what does not, and what to do next without jargon.</p>
-            </article>
-            <article class="capability-card" tabindex="0">
-              <h3>Reliable Ongoing Support</h3>
-              <p>Get help fixing issues, making updates, and keeping your site moving forward.</p>
-            </article>
-          </div>
-          <div class="divider"></div>
-          <h3>Technical Capabilities</h3>
-          <div class="capability-grid">
-            <article class="capability-card" tabindex="0">
-              <h3>Web Accessibility</h3>
-              <p>Implement practical accessibility fixes aligned with modern standards.</p>
+              <h3>Website Development</h3>
+              <p>Build modern, responsive websites with clean code, current web standards, and maintainable architecture.</p>
             </article>
             <article class="capability-card" tabindex="0">
               <h3>Performance Optimization</h3>
-              <p>Audit and improve Core Web Vitals and front-end loading behavior.</p>
+              <p>Improve load times using Lighthouse audits, image optimization, and Core Web Vitals improvements.</p>
             </article>
             <article class="capability-card" tabindex="0">
-              <h3>CMS Management</h3>
-              <p>Set up maintainable publishing workflows with cleaner content governance.</p>
+              <h3>Accessibility Compliance</h3>
+              <p>Meet WCAG 2.1 standards with screen reader support, keyboard navigation, and proper color contrast.</p>
             </article>
             <article class="capability-card" tabindex="0">
-              <h3>Support and Troubleshooting</h3>
-              <p>Diagnose production issues and deliver direct, testable fixes.</p>
+              <h3>SEO Implementation</h3>
+              <p>Fix site structure, metadata, broken links, and search visibility issues.</p>
             </article>
             <article class="capability-card" tabindex="0">
-              <h3>Documentation</h3>
-              <p>Create concise technical guides for repeatable updates and handoff.</p>
+              <h3>CMS Configuration</h3>
+              <p>Set up content management systems with custom components and editor-friendly workflows.</p>
             </article>
             <article class="capability-card" tabindex="0">
-              <h3>Figma-to-Code</h3>
-              <p>Translate designs into responsive, production-ready front-end implementation.</p>
+              <h3>Technical Documentation</h3>
+              <p>Write clear, step-by-step guides for editors, developers, and site administrators.</p>
             </article>
             <article class="capability-card" tabindex="0">
-              <h3>REST APIs and Web Services</h3>
-              <p>Integrate website workflows with external platforms and business tools.</p>
+              <h3>Component Development</h3>
+              <p>Build reusable, responsive components from design mockups or specifications.</p>
+            </article>
+            <article class="capability-card" tabindex="0">
+              <h3>Technical Audits</h3>
+              <p>Conduct comprehensive reviews covering performance, accessibility, SEO, and architecture.</p>
+            </article>
+            <article class="capability-card" tabindex="0">
+              <h3>API Integration</h3>
+              <p>Connect sites to payment processors, email services, CRMs, and third-party data sources.</p>
+            </article>
+            <article class="capability-card" tabindex="0">
+              <h3>Ongoing Support</h3>
+              <p>Troubleshoot issues, fix bugs, and maintain sites without requiring constant developer involvement.</p>
+            </article>
+            <article class="capability-card" tabindex="0">
+              <h3>Design Systems</h3>
+              <p>Create component libraries and design systems with documentation and usage guidelines.</p>
+            </article>
+            <article class="capability-card" tabindex="0">
+              <h3>Code Review & QA</h3>
+              <p>Review code quality, identify technical debt, test functionality, and recommend architectural improvements.</p>
             </article>
           </div>
         </section>
@@ -157,13 +177,16 @@
         <section class="card section">
           <h2>Why Work With Me</h2>
           <p>
-            I have worked in web development since 2011 and currently support major
-            college web ecosystems full-time at Hannon Hill. I bring enterprise-level
-            technical standards to local business websites.
+            I have worked in web development since 2011. In my current role at Hannon Hill,
+            I support dozens of colleges and universities with everything from component
+            development and CMS integrations to technical documentation and complex
+            troubleshooting. Recent projects include converting 20+ Figma designs into
+            production code, building automated content systems, and managing full site
+            migrations.
           </p>
           <p>
-            Outside of web work, I am active in the area through music and cycling,
-            so I care about building relationships locally, not one-off transactions.
+            I work remotely from Scranton, Pennsylvania and focus on building lasting
+            professional relationships through reliable delivery and clear communication.
           </p>
         </section>
       </div>

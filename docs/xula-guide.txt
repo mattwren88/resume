@@ -1,0 +1,869 @@
+XULA Component Guide
+Catalog
+Adds a single sticky button that links to a catalog entry and floats on the side as you scroll.
+How to enable Check Add Catalog Sticky Link (College Landing) under Page Options.
+Fields / Parameters
+	•	Label (text, required) – Text shown on the button.
+	•	Type (radiobutton, required) – Choose Internal, External or None.  • Internal reveals a page, file or symlink selector  • External reveals a URL field  • None disables the link
+Rendered Output A fixed button on the page edge. Clicking it opens the selected asset or URL.
+
+Tagline
+Displays a full-width colored bar with a bold main heading and optional supporting text.
+How to enable Check Add Tagline (College Landing) under Page Options.
+Fields / Parameters
+	•	Header (text, required) – Main tagline text in large font.
+	•	Sub Text (rich text, optional) – Additional paragraph beneath the header.
+Rendered Output A centered header and subtext appear in a full-width banner at the top of the page.
+
+Banner: Full Width Image and Overlay Text
+Shows a full-width background image with centered overlay text and an optional button.
+How to enable Under Page Options, check Add Banner and select Banner w/ Full Width Image and Overlay Text.
+Fields / Parameters
+	•	Image (asset, required)
+	•	Alternative Text (text, required)
+	•	Eyebrow Text (text, optional)
+	•	Header (text, optional)
+	•	Subheader (rich text, optional)
+	•	Button Label (text, optional)
+	•	Button Link (page selector or URL, appears when label is set)
+Rendered Output The chosen image fills the banner. Overlay text and an optional button appear centered on top.
+
+Banner: Overlay Text
+Shows a full-width background image with a side panel overlay containing text and an optional link.
+How to enable Under Page Options, check Add Banner and select Banner w/ Overlay Text.
+Fields / Parameters
+	•	Image (asset, required)
+	•	Mobile Image (asset, optional)
+	•	Alternative Text (text, required)
+	•	Header (text, optional)
+	•	Content (rich text, required)
+	•	Link Label (text, optional)
+	•	Link Target (page/file selector or URL, appears when label is set)
+Rendered Output A colored panel overlays one side of the full-width image, showing header, content and a clickable link.
+
+Banner: Optional Sub Menu
+Shows a full-width image with a side panel that lists a title and links for quick access.
+How to enable Check Add Banner and select Banner w/ Optional Sub Menu. Then set Add banner sub menu? to Yes.
+Fields / Parameters
+	•	Image (asset, required)
+	•	Alternative Text (text, required)
+	•	Banner Title (text, optional)
+	•	Add banner sub menu? (radiobutton, required)  • Yes reveals Sub Menu settings  • No hides them
+	•	Sub Menu – Label (text, required)
+	•	Sub Menu – Links (group, repeatable)  • Label (text, required)  • Type (radiobutton, required) – Internal or External  • Link (page/file selector or URL, required) 
+Rendered Output A side panel on the banner displays the sub menu title with each link as a collapsible item.
+
+Slider
+Displays a full-width rotating carousel of images with arrows and pagination dots.
+How to enable Under Page Options, check Add Banner and select Slider.
+Fields / Parameters
+	•	Slides (group, repeatable)  • Image (asset, required)  • Alternative Text (text, required)
+Rendered Output A carousel of slides showing selected images. Users navigate with arrows or dots; slides may auto-advance.
+Note: Powered by the rbtSlider jQuery plugin.
+
+Background Video
+Plays a full-width video in the banner area on loop, muted and autoplaying.
+How to enable Under Page Options, check Add Banner and select Background Video.
+Fields / Parameters
+	•	Video File (file asset, required)
+	•	Video Alternative Text (text, required)
+Note: Defined in a repeatable Banner group, but only the first video is used.
+Rendered Output An HTML5 video element covers the banner area, set to autoplay, loop, and muted. If unsupported, the first frame displays.
+
+Banner: None
+Disables the banner altogether so the page content begins immediately below the header.
+How to enable Under Page Options, check Add Banner and select None.
+Fields / Parameters None. All banner fields are hidden.
+Rendered Output No banner section appears.
+
+Subnavigation
+Inserts a secondary navigation bar using a pre-built block, positioned above or below the banner.
+How to enable Check Add Subnavigation under Page Options.
+Fields / Parameters
+	•	Sub Navigation (block, required) – Choose a navigation block from _blocks/navigation.
+	•	Sub Navigation Location (radiobutton, required)  • Above Banner places it between header and banner  • Below Banner places it immediately below the banner
+Configure Menu Edit the chosen block in _blocks/navigation to define dropdown items and links.
+Rendered Output A horizontal menu bar shows links from the selected block at the chosen position.
+
+Subheader
+Adds a full-width section below the banner with a heading and supporting content.
+How to enable Check Add Subheader (Subpage) under Page Options.
+Fields / Parameters
+	•	Title (text)
+	•	Content (rich text)
+Rendered Output A full-width bar under the banner shows the title centered above the content.
+
+Sidebar(s)
+Adds one or two side panels alongside main content for navigation, images or other widgets.
+How to enable Check Add Sidebar(s) under Page Options.
+Fields / Parameters
+	•	Sidebar(s) Location (radiobutton, required)  • Left Sidebar Only  • Left and Right Sidebars
+	•	Sidebars Style (dropdown, required when two sidebars) – Wide or Narrow
+	•	Sidebar Title (text, optional)
+	•	Override Folder Setup (checkbox) – Use this page’s sidebar settings instead of inherited ones
+	•	Side Navigation (block, required) – Choose a navigation block for a collapsible menu
+	•	Image Above Navigation (file, optional; 150×150)
+	•	Image Alt Text (text, required if image is set)
+	•	Sidebar Content Row (group, repeatable) – Add custom HTML, links or widgets below the menu
+Rendered Output A vertical panel (left and optionally right) frames the main content. It shows the title, optional image, a collapsible link menu, and any extra content rows.
+
+Head Scripts
+Provides a page-level option to insert custom code into the section before the page loads.
+How to enable Check Add Head Scripts under Page Options.
+Fields / Parameters
+	•	Add Scripts? (checkbox, required)
+	•	Scripts (textarea, required when enabled) – Enter inline tags or other head-level markup
+Rendered Output Inserts your scripts directly into the HEAD SCRIPTS region of the HTML template just before .
+HERO Content Rows
+High-impact, full-width sections intended for prominent placement near the top of a page. Often used for storytelling, branding, or emphasis.
+Each HERO row uses a type dropdown selection within the rows group and reveals different fields.
+HERO – Feature Tile with Image
+A flexible tile-style component that features an icon, text, image, and link, all wrapped in a responsive layout. Ideal for directional CTAs or highlighting specific services.
+How to Enable: Set type = grid-icons-links in a rows entry.
+Fields / Parameters:
+	•	icon (Shared Field: Font Awesome Dropdown) 
+	•	title (Text) 
+	•	wysiwyg (WYSIWYG Content) 
+	•	image, alt-text (Required) 
+	•	imagePosition (Radio: left/right) 
+Rendered Output:  A single-column layout with text content, image, and icon placed depending on imagePosition. Image aligns left or right and icon overlays into the corner. Button link wraps the full block.
+HERO – Featured Content
+Used to pair a large block of styled text with a full-width image and optional CTA link. Frequently used to lead into a story or program highlight.
+How to Enable: Set type = fcontent in a rows entry.
+Fields / Parameters:
+	•	heading (Text) 
+	•	content-w (WYSIWYG Content) 
+	•	image (Required), alt 
+	•	links (Shared Field: Link) 
+Rendered Output:  Large bold heading above a rich text body, aligned next to or above a full-width image depending on screen size. Optional button below.
+HERO – Featured Text with Image
+Pairs bold headline text and paragraph content with an image. Good for short introductions or lead-ins with visual impact.
+How to Enable: Set type = featured-text-image in a rows entry.
+Fields / Parameters:
+	•	featured-text-image/heading (Text, Required) 
+	•	featured-text-image/content (WYSIWYG, Required) 
+	•	featured-text-image/image, image-alt 
+Rendered Output:  Headline and content are shown left or right of the image depending on template style. Layout adapts responsively.
+HERO – Featured Tiles
+Displays a series of tile-style feature blocks (e.g., Yellow or Green) each with its own link, icon, heading, and body text.
+How to Enable: Set type = featured-tiles in a rows entry.
+Fields / Parameters:
+	•	Repeating feature-tile groups (Min: 1) 
+	•	style (Radio: Yellow or Green) 
+	•	link-type (Radio: Internal, External, No Link) 
+	•	internal or external (Page or URL) 
+	•	heading, content (WYSIWYG) 
+	•	button (Shared Field: Required) 
+Rendered Output:  Tiles arranged in grid layout with color style based on the selected theme. Each tile is fully clickable with hover effects.
+HERO – Four Square Grid with Quote
+This row creates a 2x2 layout featuring an image with link, a shared quote, another image, and a link. It is useful for displaying short blocks of info with a quote alongside. Images are required for top-left and bottom-right quadrants. Quote content is provided through a shared field.
+How to Enable: Set type = grid-quote in a rows entry.
+Fields / Parameters:
+	•	four-grid-quote/top-left/background-image (Required) 
+	•	four-grid-quote/top-left/link (Shared Field) 
+	•	four-grid-quote/top-right (Shared Field: Quote) 
+	•	four-grid-quote/bottom-right-image, bottom-right-link (Required) 
+Rendered Output:  Four quadrant layout styled as a grid. Quote and links are styled with spacing and hover effects. Responsive layout stacks to single column on mobile.
+HERO – Full Width Image
+Renders a large full-width image with optional text overlay. The overlay can include one or two lines of text, positioned centered over the image.
+How to Enable: Set type = full-width-image in a rows entry.
+Fields / Parameters:
+	•	full-width-image/item/image (Required) 
+	•	overlay (Radio: Yes/No) 
+	•	overlay-line-1, overlay-line-2 (If overlay is Yes) 
+Rendered Output:  A large image with optional overlay text centered on it. Uses CSS absolute positioning and overlay styling.
+HERO – Highlight
+Intended for a student spotlight or testimonial. Shows image (optional), content block, and supports links.
+How to Enable: Set type = highlight in a rows entry.
+Fields / Parameters:
+	•	student/image (Checkbox to enable image) 
+	•	student/sphoto, student/alt (If image enabled) 
+	•	student/content (WYSIWYG) 
+Rendered Output:  Styled to emphasize student stories, with optional image floated to the side and text styled for readability.
+HERO – Layered Image Feature
+Displays a background image with a smaller image overlaid on top. Used to showcase branding or layered visuals.
+How to Enable: Set type = layered-image-feature in a rows entry.
+Fields / Parameters:
+	•	layered-image/background-image (Required) 
+	•	layered-image/text-overlay/image, alt-text (Required) 
+Rendered Output:  Uses position: relative/absolute styling to layer a smaller image over a background image. Appears as a collage-like feature.
+HERO – Spotlight Slider
+A multi-slide hero carousel with optional captions. Slides autoplay and allow user navigation.
+How to Enable: Set type = slider in a rows entry.
+Fields / Parameters:
+	•	Multiple slides/image, slides/alt, slides/wysiwyg 
+Rendered Output:  A Bootstrap-powered slider that cycles through full-width images. Each slide includes a caption styled with overlay text.
+HERO – Featured Quote
+Displays a large image background with an overlaid quote or custom content box. Style is selected via radio button (quote or custom).
+How to Enable: Set type = featured-quote in a rows entry.
+Fields / Parameters:
+	•	featured-quote/image/file, atl, text 
+	•	style (Radio: quote or custom) 
+	•	title, quote (Shared Field), wysiwyg (for custom) 
+	•	button (Shared Field) 
+Rendered Output:  Either a large pull quote or custom block sits over a full-width image. Typography and background overlays ensure readability.
+
+MEDIA Content Rows
+Visual and multimedia elements used to break up content, add engagement, or highlight imagery. These rows prioritize design and layout.
+MEDIA – Image
+Displays a single, full-width image.
+How to Enable: Set type = image in a rows entry.
+Fields / Parameters:
+	•	image (File Asset, Required)
+	•	alt (Text, Required)
+Rendered Output: A simple <img> element placed in a styled container. Useful for placing branded banners or large visuals between sections.
+MEDIA – Image Slider
+A responsive slider containing multiple full-width images with captions. Great for storytelling or showcasing sequential visuals.
+How to Enable: Set type = image-slider in a rows entry.
+Fields / Parameters:
+	•	Repeating slide groups (Min: 2)
+	•	image (File Asset, Required)
+	•	alt (Text, Required)
+	•	caption (Text)
+Rendered Output: Bootstrap carousel with left/right controls. Each slide includes a responsive image and optional caption. One slide marked active on load.
+MEDIA – Image Cards
+A grid layout of 2 cards using background images and overlaid links. Each card includes alt text, a background image, and a linked title.
+How to Enable: Set type = cards in a rows entry.
+Fields / Parameters:
+	•	Repeating cards group (Min/Max: 2)
+	•	image (File Asset, Required)
+	•	alt (Text, Required)
+	•	link (Shared Field: Required)
+Rendered Output: Two side-by-side cards with hover opacity effects and styled CTA titles. Cards are clickable areas with background-image styling.
+MEDIA – Image Cards with Paragraph
+Expands on Image Cards by allowing a title, image, and a rich text content block under each. Typically displayed in 2–4 card grids.
+How to Enable: Set type = image-card-w-paragraph in a rows entry.
+Fields / Parameters:
+	•	heading (Text, optional)
+	•	Repeating image-card group (Min: 1, Max: 4)
+	•	title (Text, Required)
+	•	image (File Asset, Required)
+	•	alt-text (Text)
+	•	content-w (WYSIWYG)
+Rendered Output: Grid layout using display: grid for desktop and block for mobile. Each card includes an image, heading, and optional content block below the image.
+MEDIA – Image Hover Cards
+A flexible grid layout of 2–3 clickable image tiles with hover effects. Cards include a background image, label text, and a right-angle icon for visual cue.
+How to Enable: Set type = three-cards in a rows entry.
+Fields / Parameters:
+	•	Repeating card group (Min: 2, Max: 3)
+	•	background-image (File asset, Required)
+	•	link (Shared Field: Required)
+Rendered Output: Each card is shown in equal-width columns (col-sm-6 for 2, col-sm-4 for 3). The background image fills the tile, which is overlayed by a darkened layer. On hover, an icon animates in. Cards link to internal or external destinations and are fully clickable.
+MEDIA – Image Link Matrix
+Displays a grid of full-width linked image cards with overlaid captions. Ideal for visually guiding users to key landing pages, program hubs, or feature areas using strong visuals.
+
+How to Enable:  Set Type = MEDIA – Image Link Matrix in a rows entry.
+Fields / Parameters:
+	•	Repeating Item group (Min: 1, Max: 6) 
+	•	Image (File asset, Required)
+	•	Caption (Text, used as alt text)
+	•	Link (Shared Field: Link - Required) 
+Rendered Output: Each item is rendered inside a responsive <div class="col-md-4 col-sm-4 col-xs-12">, creating a three-column layout. The image is wrapped in an anchor (<a>) and fills its column width responsively. Overlay text is rendered using <h4 class="xv-img-caption">, aligned bottom right and converted to uppercase via the class. Clicking the card opens the linked page or resource. Layout adapts to smaller breakpoints to ensure mobile responsiveness.
+MEDIA – Event Collage
+Embeds a dynamic events feed in a collage-style layout. Ideal for highlighting upcoming campus events, programs, or recurring experiences using data from a centralized Events block.
+
+How to Enable:  Set Type = MEDIA – Event Collage in a rows entry.
+Fields / Parameters:
+	•	Title (Text – optional)
+	•	Block (Asset – Required, must reference a valid Events block)
+Rendered Output: If an Events block is connected and the layout selected within that block is set to “Collage,” a visually engaging, image-driven event grid appears with animation-ready placeholders. A heading appears above if the Title field is populated. While previewing or on pages with no event data, a loading spinner appears in place of the content (<i class="fas fa-spinner fa-pulse">). Note: Component rendering is dependent on the data and configuration of the referenced Events block.
+MEDIA – Photo Gallery
+Displays a full-width responsive image gallery arranged in rows of three. Optionally includes a title and rich text introduction above the images. Best used for showcasing campus events, student life, or historical photo collections.
+
+How to Enable:  Set Type = MEDIA – Photo Gallery in a rows entry.
+Fields / Parameters:
+	•	title (Text – optional)
+	•	content-w (WYSIWYG – optional introductory content)
+	•	Repeating item group (Min: 1, Max: ∞)
+	•	image (File asset – Required)
+	•	alt (Text – image alternative text, Required) 
+Rendered Output: The title appears as an <h1> followed by the WYSIWYG content, if provided. Images are rendered in rows of three using Bootstrap grid columns (col-md-4). Each image is responsive (img-responsive) and includes semantic alt text. Extra spacing (padding-bottom: 2em) is added between rows for visual separation. If fewer than three images are added, the final row aligns accordingly.
+MEDIA – Photo Box with More Info
+A visually striking section that overlays rich content and a CTA button on top of a full-width background image. This component is ideal for high-impact promotions or featured calls-to-action with supporting details.
+
+How to Enable:  Set Type = MEDIA – Photo Box with More Info in a rows entry.
+Fields / Parameters:
+	•	heading (Text – Required)
+	•	subheading (Text – Optional)
+	•	content-w (WYSIWYG – Required)
+	•	image (File asset – Required)
+	•	link (Shared Field – Optional)
+Rendered Output: A 500px tall section spans the full width of the page. The selected image is applied as a background with reduced opacity (opacity: 0.5) to allow overlaid content to stand out. Content is centered vertically and horizontally using CSS transforms. 
+If provided, the subheading appears above the main heading (<h4> above <h1>), followed by the content body. An optional button appears below if a link is included. The overall visual impact is one of a promotional feature or branded callout.
+MEDIA – Stories Carousel
+An interactive carousel showcasing categorized news stories from the News site. Each story card features a category label, headline, summary, and read-more link alongside a dynamic background image. A rotating display allows users to toggle between categories like Student Life, Research, Academics, and Community Engagement.
+
+How to Enable:  Set Type = Stories Carousel in a rows entry.
+Fields / Parameters:
+	•	heading (Text – Optional)
+	•	All content is auto-populated using Velocity queries from the News site. No manual entry of stories is required.
+Content Logic:
+	•	Uses Cascade CMS's query API to fetch the latest post from each of the following categories: 
+	•	Student Life
+	•	Research
+	•	Academics
+	•	Community Engagement 
+	•	Pulls from metadata values:
+	•	title
+	•	summary
+	•	category
+	•	link
+	•	Image logic follows this hierarchy:
+	•	Banner image (if banner/display == Yes)
+	•	Fallback to addImage field
+	•	Default placeholder (if no images found)
+Rendered Output: The section displays in a two-column layout: the left side contains the carousel content for each category, and the right side displays the corresponding image. Below, category icons allow switching between tabs. On mobile, this layout stacks vertically with tappable thumbnails. Each slide includes the story title, summary (if provided), and a “Read More” CTA. Images update dynamically with each slide change.
+Media – Cards
+Displays a set of content cards in a responsive grid. Each card can contain a heading, optional descriptive text, and an optional button-style link. A global toggle allows all cards in the set to include an image above the heading, which enhances visual appeal and supports varied content presentation. The layout adjusts gracefully for smaller screens.
+
+How to Enable:  Set the Type field in a rows entry to Media – Cards.
+Fields / Parameters:
+	•	Media – Cards (Shared Field: Components/Cards)
+	•	Add Images (Checkbox) — When selected, activates image-related fields for each card. 
+	•	Card (Group – repeatable)
+	•	Heading (Text) — Required; the card title.
+	•	Text (WYSIWYG) — Optional descriptive content below the title.
+	•	Image (File) — Required if “Add Images” is checked; displayed at the top of the card.
+	•	Image Alt Text (Text) — Required if “Add Images” is checked; brief description for accessibility.
+	•	Link (Shared Field: Link) — Optional; if provided, displays as a button below the text.
+Rendered Output: The component outputs a <div class="cent-announcement-cards cent-container"> containing multiple <div class="cent-card"> elements. Each card may include an <img> at the top (if enabled), followed by an <h2> for the heading, optional rich text in a <div>, and a button-style <a class="cent-read-more"> link if a URL is provided. Styling ensures consistent spacing, card borders or shadows, and responsive stacking for mobile displays.
+Media – Video / Photo
+Displays a two‑column media block: the left column shows a large background image with an overlaid play button that opens an MP4 video in a lightbox; the right column shows a companion photo. On smaller screens the columns stack vertically while preserving the play‑to‑lightbox behavior.
+
+How to Enable:  Set the Type field in a rows entry to Media – Video / Photo.
+Fields / Parameters:
+	•	Video / Photo (Group) 
+	•	Video (File – required) — MP4 source used by the lightbox player. (Help text: “The video needs to be in MP4 format.”)
+	•	Video Placeholder (File – required) — Background image behind the play button in the left column (acts as the poster/teaser image).
+	•	Image (File – required) — Background image for the right column.
+Rendered Output: The component outputs a wrapper with a .row containing two .column elements. The left column uses the Video Placeholder as a CSS background with a centered play button; clicking it launches the Video in an Afterglow lightbox (.afterglow link and .afterglow-lightboxplayer video). The right column renders the Image as a CSS background. Spacing, overlay tint, and button styling are handled by site styles; the layout collapses into a single column on narrow viewports for responsive display.
+MEDIA – Image Grid with Rising Textbox
+Displays a responsive grid of image tiles where each tile reveals a text box when hovered. Each tile supports a background image, a title, optional descriptive text, and an optional link. The grid layout adapts to several predefined configurations (e.g., 4×2, 3×1, 3×2, 2×1, 2×2, 1×1) based on screen size, ensuring visual balance and usability across devices. The rising textbox animation provides an engaging interactive effect without obscuring the image entirely.
+How to Enable:  Set the Type field in a rows entry to MEDIA – Block – Image Grid with Rising Textbox.
+Fields / Parameters:  MEDIA – Block – Image Grid with Rising Textbox (Shared Field: Components/Image Grid with Text)
+	•	Heading (Text) — Optional; displays above the grid. 
+	•	Intro Content (WYSIWYG) — Optional; displays below the heading, above the grid. 
+	•	Image Tile (Group – repeatable) 
+	•	Background Image (File) — Required; the image shown behind the tile content. 
+	•	Title (Text) — Required; displayed inside the rising text box. 
+	•	Description (Text) — Optional; displayed inside the rising text box when visible. 
+	•	Link (Shared Field: Link) — Optional; wraps the tile in an anchor if provided. 
+Rendered Output: The component outputs a <section class="img-grid-text"> containing a heading and optional intro text, followed by a grid of .ctaTile elements arranged according to the selected layout style. Each tile uses background-image styling for the visual asset and includes a .ctaTile_content container for the title and optional description. On hover (desktop) or tap (mobile), the text box rises from the bottom, and the description fades into view. Responsive CSS ensures the grid reorganizes at breakpoints, maintaining equal spacing and touch-friendly interaction.
+MEDIA – Block - Image Grid with Rising Textbox
+Displays a responsive grid of image tiles. Each tile uses a background image and shows a title with optional supporting text inside a “rising” overlay that slides up on hover/tap. Tiles may function as links. The grid adapts from a single column on small screens to multiple columns at larger breakpoints for balanced layout and spacing.
+
+How to Enable: Set the Type field in a rows entry to MEDIA – Block - Image Grid with Rising Textbox.
+Fields / Parameters:
+	•	Heading (Text) — Optional; appears above the grid.
+	•	Content (WYSIWYG) — Optional; rich text shown beneath the heading and above the grid.
+	•	Block Chooser (Block — multiple, required) — Each selected block provides one tile. Within each block’s Image group: 
+	•	Background Image (File — required) — The tile’s background image.
+	•	Title (Text — required) — Shown in the overlay.
+	•	Content (Text — optional) — Additional description revealed with the overlay.
+	•	Link (Link — optional) — If provided (and not “None”), the entire tile becomes a link.
+Rendered Output: Outputs an optional heading and content followed by a grid wrapper (e.g., a container using the 4×2 layout at wide viewports). Each tile renders as a block with its Background Image set via CSS and an overlay containing Title and optional Content that animates upward on interaction. If Link is set, the tile is wrapped as a clickable card; otherwise, it renders as a non‑linking tile. The grid is fully responsive, increasing columns at larger breakpoints while maintaining consistent spacing and hover effects.
+CONTENT Content Rows
+Sections designed primarily for delivering structured or narrative information. These rows focus on clarity, accessibility, and flexibility—supporting text-rich layouts, interactive components, and expandable details. Each CONTENT row uses a type dropdown selection within the rows group and reveals fields tailored to its specific format.
+CONTENT – Accordion with Text
+Displays a vertical list of collapsible items. Each item shows a label; clicking toggles a content panel beneath it. Works well for FAQs and long-form sections where progressive disclosure improves scannability.
+
+How to Enable:
+	•	Set the Type field in a rows entry to Content – Accordion with Text.
+Fields / Parameters:
+	•	Heading (Text) — Optional; section title shown above the accordion.
+	•	Accordion (Group – repeatable)
+	•	Label (Text) — Required; the clickable title of the item.
+	•	Content (WYSIWYG) — Required; rich text revealed when the item is expanded.
+Behavior & Notes:
+	•	Each item renders as a checkbox‑driven toggle (plus/minus icon swap) for broad browser support
+	•	If your theme supplies a background style variable (e.g., a “gray background” switch), the container will receive a corresponding class to adjust styling; otherwise the default (white) style is used.
+	•	If an item’s content isn’t already wrapped in a paragraph, the component auto‑wraps it to keep spacing consistent.
+	•	Use unique, concise Label text so generated IDs remain unique and accessible.
+Rendered Output:
+	•	The component outputs a series of .xv-accordion-container blocks (theme class may be appended) containing an .accordion-wrapper with one .tab per item.
+	•	Each .tab includes an input[type="checkbox"] (drives the toggle), a <label> showing the Label text and plus/minus icons, and a .tab-content region containing the Content.
+	•	Typography and spacing follow the site’s base styles; items stack fluidly on small screens.
+Content – Content
+Displays one to three text columns with an optional section heading. Each column can include a short column header and rich-text content. The layout shifts responsively (one column on small screens; two or three columns on larger screens) and can adopt an alternate background color to visually separate the section.
+
+How to Enable: Set the Type field in a rows entry to Content – Content.
+Fields / Parameters:
+	•	Background Color (Radio: White / Gray / Dark Gray) — Optional; sets the section’s background style.
+	•	Heading (Text) — Optional; section title displayed above the columns.
+	•	Content Column (Group — repeatable; min 1, max 3)
+	•	Header (Text) — Optional; small heading for the column.
+	•	Content (WYSIWYG — required) — Main body copy for the column.
+Rendered Output: Outputs a row wrapper that applies the chosen Background Color and contains the optional Heading followed by 1–3 column containers. Each column renders the Header as a subheading above the WYSIWYG Content. The grid uses equal-width columns (two-up or three-up at larger breakpoints) and stacks into a single column on narrow screens for readability.
+CONTENT – Page Introduction
+Introduces the page with a prominent title, optional subtitle, rich text, and an optional image. When an image is supplied, the layout becomes a two‑column split (text left, image right). On smaller screens, columns stack vertically for readability.
+
+How to Enable: Set the Type field in a rows entry to CONTENT – Page Introduction.
+Fields / Parameters:
+	•	Page Title (Text) — Required; displayed as the main H1.
+	•	Subtitle (Text) — Optional; italic subheading beneath the title.
+	•	Content (WYSIWYG) — Required; body copy supporting the intro.
+	•	Image (File) — Optional; if provided, appears in the right column.
+	•	Alt Text (Text) — Required when Image is provided; used for accessibility.
+Rendered Output: The component renders a .two-col-row section. The left column contains <h1 class="summary-header"> for the Page Title, an optional italic <h2> for the Subtitle, and the formatted Content. If an Image is set, a right column appears with a .image-holder using the image as a background. Without an image, the text spans the full width. The layout is responsive, stacking columns on smaller viewports.
+CONTENT – Text Box on Image
+Displays a full-width image with a right-aligned text panel that sits on top of the image. The panel contains a title, rich text, and an optional button-style link. On smaller screens the layout stacks vertically, keeping text readable and the image cropped appropriately.
+
+How to Enable:  Set the Type field in a rows entry to CONTENT – Text Box on Image.
+Fields / Parameters:
+	•	Title (Text) — Optional; heading displayed in the text panel.
+	•	Content (WYSIWYG) — Optional; rich text displayed under the title.
+	•	Image (File) — Required; background image shown behind the text panel.
+	•	Link (Link) — Optional; if provided, renders as a button below the text.
+Rendered Output: The component outputs a section with a background Image and an overlaid text panel. The panel includes the Title, formatted Content, and an optional button using the Link’s label. The design provides subtle overlay styling for contrast and stacks into a single column on mobile to maintain readability.
+CONTENT – Quote
+Displays a single, centered pull quote with an attribution. The quote appears prominently as a short statement, with the author’s name (and optional title/affiliation) shown beneath it. Intended for concise testimonials or emphasis callouts.
+
+How to Enable: Set the Type field in a rows entry to CONTENT – Quote.
+Fields / Parameters:
+	•	Content (Text — required) — The quote text. Plain text only; HTML is escaped.
+	•	Quotee (Text — required) — Name of the person being quoted; may include a title or affiliation.
+Rendered Output: The component outputs a centered <blockquote> containing the Content styled as a prominent heading line and a smaller attribution line for the Quotee. A leading dash is added automatically before the attribution. Typography follows site styles and scales responsively for readability.
+CONTENT – Sub Header with Line
+Displays a single subsection heading styled with an underline rule. Useful for breaking up long pages with a brief, visually distinct subheader.
+
+How to Enable:  Set the Type field in a rows entry to CONTENT – Sub Header with Line.
+Fields / Parameters:
+	•	Sub header with line (Text — required) — The subheading text to display.
+Rendered Output: Outputs a container with a <h2> element wrapped in a .headline2 class that draws a horizontal rule/line treatment. The text is presented in an italic heading style, centered within the available width. A visually hidden helper <div class="sr-only"> is included to improve screen-reader context between headings.
+CONTENT – Left-Justified Image with Text
+Displays a two-column section with an image on the left and text on the right. The text area includes a prominent title, rich paragraph content, and an optional link styled as inline text. On smaller screens the columns stack, with the image preceding the text.
+
+How to Enable: Set the Type field in a rows entry to CONTENT – Left-Justified Image with Text.
+Fields / Parameters:
+	•	Title (Text) — Required; heading shown above the text.
+	•	Content (WYSIWYG) — Required; main body copy to the right of the image.
+	•	Link (Shared Field: Link) — Optional; displays below the content as a text link.
+	•	Image (Group)
+	•	Image (File) — Required; shown on the left as a background image.
+	•	Alternative Text (Text) — Optional; short description for accessibility.
+Rendered Output: The component renders a responsive two-column layout: a left column with the Image set as a background block, and a right column containing the Title, formatted Content, and the optional Link beneath. Columns collapse to a single stack on mobile to maintain readability and tap targets.
+CTA – Button(s)
+Displays one of several button presentations: a simple row of standard buttons, an icon-based tile matrix, or a “matrix” of large call-to-action tiles. Each variant is responsive and converts to stacked tiles on small screens. Section background color and optional headings vary by selection.
+
+How to Enable: Set the Type field in a rows entry to CTA – Button(s). Then choose a Button Type.
+Fields / Parameters:
+Button Type (Dropdown — required)
+	•	Standard Button(s) — reveals Background Color and Button(s).
+	•	Matrix – Dark Grey Background — reveals Icon Button Matrix.
+	•	Matrix – Green Background (New) — reveals Heading and Icon Button Matrix.
+	•	Matrix – Lite Grey Background with Text Color Options — reveals Button (Matrix Button).
+Standard Button(s)
+	•	Background Color (Radio) — White, Gray, or Dark Gray; colors the section background.
+	•	Button(s) (Shared Field: Button) — Repeatable links rendered as standard buttons.
+Matrix – Dark Grey Background / Matrix – Green Background (New)
+	•	Heading (Text) — Only for “Matrix – Green Background (New)”; optional heading above the grid.
+	•	Icon Button Matrix (Group — repeatable Item)
+	•	Item
+	•	Icon (Shared Field: Font Awesome Icon Dropdown) — Required; icon displayed with the label.
+	•	Link (Shared Field: Link – Required) — Required; provides label and URL for the tile.
+Matrix – Lite Grey Background with Text Color Options
+	•	Button (Shared Field: Matrix Button) — Repeatable; each entry is one tile and includes:
+	•	Label & Link (from the shared field) — Required; used for tile text and destination. 
+	•	Add Icon (Checkbox) — Optional; when selected, shows the following:
+	•	Image (File) — Required if “Add Icon” is selected; icon shown above/alongside the label.
+	•	Text Color (Option) — Sets the label color for better contrast on the light tile.
+Rendered Output: “Standard Button(s)” renders a centered section (if a non-white background is chosen) containing inline button links. “Matrix – Dark Grey Background” and “Matrix – Green Background (New)” render a responsive grid of clickable tiles; each tile shows a Font Awesome icon and the link label, and the entire tile is the hit area. The green variant includes an optional heading and branded green tiles; the dark-grey variant uses a dark backdrop. “Matrix – Lite Grey Background with Text Color Options” renders light-grey tiles; each tile can show an optional image icon and uses the chosen text color for the label. All variants collapse from three columns to two and then one column on smaller screens, with accessible aria-labels set from each link’s label.
+CTA – Call to Action Links
+Outputs a full-width callout bar containing two prominent call-to-action links. Each CTA can include an optional icon to the left of the label. On larger screens the two links are centered side-by-side with a divider; on small screens they stack vertically. The whole bar spans edge-to-edge and inherits the site’s CTA styling.
+
+How to Enable: Set the Type field in a rows entry to CTA – Call to Action Links.
+Fields / Parameters:
+	•	Links (Shared Field: Link – Required – Icon) — Minimum 2, Maximum 2; add exactly two CTAs.
+	•	Label (Text) — Required; link text shown in the bar.
+	•	URL (Link) — Required; destination of the CTA.
+	•	Icon (Font Awesome class) — Optional; renders to the left of the label.
+Rendered Output: Renders a <section class="dprograms-apply-request"> with a centered two-column layout. Each column contains an anchor styled as a CTA; if an icon class is provided, an <i> icon appears before the label. The first CTA receives a right border to visually separate the pair. Layout is responsive, collapsing to a single-column stack on mobile.
+CTA – Social Media Table
+Outputs a full-width, responsive table listing people/departments with links to their social profiles. Visible platform columns are chosen globally; each row provides the matching URLs. An optional Other column can be added with a custom Font Awesome icon.
+
+How to Enable
+Set the Type field in a rows entry to CTA – Social Media Table.
+Fields / Parameters
+	•	Social Media Columns to be Displayed in Table (Checkbox — Required)  Select the platform columns shown for all rows: Twitter, Instagram, Facebook, Youtube, TikTok, WhatsApp, LinkedIn, Other.  • Selecting Other also reveals the Other Column Heading, Other – Font Awesome Icon Class, and adds Other – URL to each Social Row.
+	•	Table Heading (Text — Required)  Header label for the first column (the names column), e.g., Organization, Department, etc.
+	•	Other Column Heading (Text — Required; shown only if Other is selected)  Header label used for the Other column. Default: “Other.”
+	•	Other – Font Awesome Icon Class (Text — Required; shown only if Other is selected)  Font Awesome class for the Other column icon, e.g., fa-brands fa-pinterest.
+	•	Social Row (Group — Repeatable; add one per person/org/department)
+	•	Row Name (Text — Required) — Name of the person/org/department.
+	•	Twitter URL (Text/URL — Optional; used only if Twitter column enabled)
+	•	Instagram URL (Text/URL — Optional; used only if Instagram column enabled)
+	•	Facebook URL (Text/URL — Optional; used only if Facebook column enabled)
+	•	Youtube URL (Text/URL — Optional; used only if Youtube column enabled)
+	•	TikTok URL (Text/URL — Optional; used only if TikTok column enabled)
+	•	WhatsApp URL (Text/URL — Optional; used only if WhatsApp column enabled)
+	•	LinkedIn URL (Text/URL — Optional; used only if LinkedIn column enabled)
+	•	Other – URL (Text/URL — Optional; shown/used only if Other column enabled)
+Rendered Output
+Renders a full-width <section> containing a responsive table.
+	•	The first header cell uses Table Heading; subsequent headers correspond to the globally selected platforms (in the order defined by the field).
+	•	If Other is enabled, the Other Column Heading is used and the header shows the provided Font Awesome icon.
+	•	Each row displays Row Name followed by icon-style links for the enabled platforms; if a row omits a URL for a selected platform, that cell renders empty.
+	•	Table inherits site table styles and remains readable on small screens (standard responsive/overflow behavior).
+CTA – Stay Connected
+Displays a full-width green callout band with a large heading, short supporting copy, and a horizontal row of social media links. An optional handle can appear at the end of the row.
+
+How to Enable: Set the Type field in a rows entry to CTA – Stay Connected.
+Fields / Parameters:
+	•	Heading (Text — required) — The main title shown in the band.
+	•	Content (WYSIWYG — required) — Short descriptive copy beneath the heading.
+	•	Social Handle (Text — optional) — Free text (e.g., “@YourHandle”). Enter the “@” yourself if desired.
+	•	Social Link (Group — repeatable) — Add one per platform to display:
+	•	Type (Dropdown — required) — Facebook, Instagram, Twitter, YouTube, or None (None does not render).
+	•	URL (Text/URL — required) — Destination for the selected platform.
+Rendered Output: Outputs a full-width section <div class="xv_row xv-bg-green"> containing:
+• <h1 class="xv-section-title xv-text-white"> for the Heading.
+• <div class="xv-text-desc xv-text-white"> for the Content.
+• <ul class="xv-socials-list"> where each Social Link renders as <li><a aria-label="Type" href="URL"><i></i></a></li> with Font Awesome icons sized via fa-3x and mapped by Type: Facebook → fab fa-facebook, Instagram → fab fa-instagram, Twitter → fab fa-twitter-square, YouTube → fab fa-youtube-square.
+• If Social Handle is provided, a trailing <li><h4 class="xv-h4">handle</h4></li> is appended.
+The list displays horizontally with accessible aria-label text on each link and collapses/wraps naturally on small screens.
+CTA – Links List
+Displays a centered heading with a simple list of call-to-action links. On larger screens the links are laid out in a two-column grid; on small screens they stack in a single column.
+
+How to Enable: Set the Type field in a rows entry to CTA – Links List.
+Fields / Parameters:
+	•	Heading (Text — optional) — Title shown above the links list.
+	•	Links (Shared Field: Link — repeatable) — Add one or more links to display. Each Link provides:
+	•	Label (Text — required) — The link text.
+	•	URL (Link — required) — Destination for the link.
+	•	Type (Selector — required) — Use Internal or External to render; items set to None are skipped.
+Rendered Output: Outputs a <section class="depart-howto-apply"> containing a centered <h1> (if Heading provided) and an unordered list <ul class="howto-apply-list xv-links-list">. Each link renders as <li><a aria-label="Label" href="URL">Label</a></li>. The list is styled as two columns on desktop and collapses to one column on mobile. Each anchor includes an aria-label equal to its visible label for accessibility.
+CTA – Featured Links
+Creates a feature block with an image and a list of call-to-action links. Two display styles are supported: a “Two Columns (Homepage)” layout with a centered heading and a two-up link grid, or a “Single Column (Department)” layout with image left and copy/links right.
+
+How to Enable: Set the Type field in a rows entry to CTA – Featured Links.
+Fields / Parameters:
+	•	Heading (Text — optional) — Section title.
+	•	Subheading (Text — optional) — Secondary title; used only in Single Column style.
+	•	Image (File — required) — Feature image.
+	•	Alternative Text (Text — required) — Image alt text.
+	•	Description (Multiline Text — optional) — Short intro above the links. Raw HTML is allowed; if no <p> tags are present it’s wrapped in a paragraph automatically.
+	•	Featured Links Style (Radio — required) — Choose:
+	•	Single Column (value: one) — Department page style.
+	•	Two Columns (value: two) — Homepage style.
+	•	Links (Shared Field: Link — 1+ items) — Each link supplies a Label and URL. Items with type “none” are skipped.
+Rendered Output:
+	•	Two Columns (Homepage):
+	•	Renders <section class="next-step-section">.
+	•	Optional centered <h2> heading in a .headline wrapper.
+	•	A two-column layout: left column shows <img class="img-responsive next-step-img" alt="">; right column shows the description and a responsive two-up grid of links.
+	•	Each link is output as <h5><a class="animate-anchor" href="[URL]">[Label] <i class="fas fa-long-arrow-alt-right arrow-icon animate"></i></a></h5>.
+	•	Visually hidden <h3> and <h4> elements are included for accessibility structure.
+	•	Single Column (Department):
+	•	Renders <section class="pt-4 pb-4">.
+	•	Optional <h1> heading.
+	•	Two columns: left image and right content. The right column may include a <h3><strong>[Subheading]</strong></h3>, followed by the description and an unordered list of links.
+	•	Each list item renders as <li><a href="[URL]">[Label] <i class="fas fa-long-arrow-alt-right"></i></a></li>.
+CTA – Block - Call to Action Buttons
+Displays a row of large, icon-driven CTA tiles (e.g., Find a Program, Visit, Apply, Give). Each tile is a full clickable link with an icon on the left and a bold label on the right.
+
+How to Enable: Set the Type field in a rows entry to CTA – Block - Call to Action Buttons.
+Fields / Parameters:
+	•	CTA Button Blocks (Block — required — 2–4 items; restricted folder: _blocks/cta-buttons) — Add one block per CTA.  For each CTA Button Block:
+	•	Image (File — required) — Icon graphic shown on the tile.
+	•	Alternative Text (Text — required) — Alt text for the icon.
+	•	Link (Shared Field: Link — required) — Destination URL; the Link Label becomes the CTA label.
+Rendered Output:
+	•	Renders a <section class="findProgram"> with a responsive grid of CTA tiles.
+	•	Each item outputs as:  <a class="findProgram-links" aria-label="[Label]" href="[URL]">
+	•	Icon: <img class="img-responsive" alt=""> inside .findProgram-icon
+	•	Label: <p class="montebold">[Label]</p> inside .programDetails
+	•	Automatic column sizing based on number of CTAs:
+	•	2 items → col-6 (two-up)
+	•	3 items → col-4 (three-up)
+	•	4 items → col-3 (four-up)
+	•	 On extra-small screens each tile is col-xs-6 (two per row)
+CTA – Tabs
+Creates a switchable tabbed content area (2–3 tabs). Each tab has a label, rich-text content, and an optional call-to-action button beneath the content.
+
+How to Enable: Set the Type field in a rows entry to TABS – Tabs.
+Fields / Parameters:
+	•	Tab (Group — required — min 2, max 3; repeat for each tab)
+	•	Label (Text — required) — The tab title shown in the tab bar.
+	•	Content (WYSIWYG — optional) — Rich text displayed when the tab is active.
+	•	Link (Shared Field: Link — optional) — If provided, renders a CTA button below the tab’s content; link label is used as the button text.
+Rendered Output:
+	•	Outputs a <section> with a Bootstrap-style tab interface:
+	•	Tab bar: <ul class="nav nav-tabs xaviertab"> containing one <li> per tab; the first tab is given class="active".
+	•	Panels: <div class="tab-content"> with one <div class="tab-pane"> per tab; the first pane is active.
+	•	Inside each active pane:
+	•	The WYSIWYG content renders as provided (HTML supported).
+	•	If a Link is set, a button is appended as  <a class="btn button-tabs button-hover" href="[URL]" aria-label="[Label]">[Label]</a>.
+	•	Styling hooks include .tabbable-panel, .tabbable-line (underline indicator), and .xaviertab for the tab bar.
+CTA – Tabs (Vertical)
+Displays content in a two-column, left-nav “pills” layout. Tab labels stack vertically on the left; the active tab’s content shows on the right with optional image. Ideal for short (2–3) related sections.
+
+How to Enable: Set the Type field in a rows entry to TABS – Tabs - Vertical.
+Fields / Parameters:
+	•	Heading (Text — optional) — Title above the tabs.
+	•	Intro Content (WYSIWYG/Text — optional) — Short paragraph under the title.
+	•	Vertical Tab (Group — required — min 2, max 3; repeat for each tab)
+	•	Label (Text — required) — The tab name shown in the left stack.
+	•	Add Image (Checkbox — optional) — When checked, shows an image in the content area.
+	•	Image (File — required when Add Image is checked).
+	•	Alternative Text (Text — required when Image is provided).
+	•	Content (WYSIWYG — optional) — Rich text for the tab panel.
+	•	Link (Shared Field: Link — optional) — Present in the data, not currently rendered in output (reserved for future use).
+Rendered Output:
+	•	A full-width light gray section <div class="xv_row xv-light-gray-bg"> containing a .container.
+	•	Heading and optional intro copy render first.
+	•	Two columns:
+	•	Left: <ul class="nav nav-pills nav-stacked"> with one <li> per tab; first item has class="active". Links include aria-label and data-toggle="pill".
+	•	Right: <div class="tab-content xv-nav-pills-content"> with one <div id="pill_N" class="tab-pane fade [in active]"> per tab.
+	•	Inside each pane, content is wrapped in .xv-pills-tab-image. If Add Image is enabled, a <figure><img …></figure> precedes the WYSIWYG content.
+	•	The first tab is active on load; switching tabs uses Bootstrap pill behavior.
+CTA – Data – Information Table
+Displays a user-authored HTML table inside a responsive wrapper so it scrolls horizontally on small screens. Use for specs, requirements, or any tabular data.
+
+How to Enable: Set the Type field in a rows entry to DATA – Information Table.
+Fields / Parameters:
+	•	Content (WYSIWYG — required) — Paste or author valid table markup here (e.g., <table>, <thead>, <tbody>, <tr>, <th>, <td>). You may add your own classes (e.g., table, table-striped) if desired.
+Rendered Output:
+	•	Renders a Bootstrap container with a responsive table wrapper:  <div class="container"> … <div class="customsitetable table-responsive">[your HTML]</div> … </div>
+	•	Whatever you enter in Content is output unchanged inside the wrapper. If the viewport is narrow, the table becomes horizontally scrollable.
+
+DATA – Important Dates
+Shows a three-up list of upcoming dates with a large day badge, a formatted date (or range), and an event title. Useful for application deadlines, closures, or milestones.
+
+How to Enable: Set the Type field in a rows entry to DATA – Important Dates.
+Fields / Parameters:
+	•	Heading (Text — optional) — Section heading shown above the list.
+	•	Dates (Shared Field: Important Date — repeatable; minimum 1) — each item includes:
+	•	Date (Date — required) — start date (MM-DD-YYYY).
+	•	End Date (Date — optional) — include to display a range.
+	•	Title (Text — required) — event label displayed next to the date.
+Rendered Output:
+	•	Renders a <div class="container xv-key-dates-container" role="region" aria-label="Important Dates"> with a top and bottom <hr class="black">.
+	•	Each date renders as a column (.col-sm-4 .col-xs-12) containing:
+	•	A square badge with the start day number (<span> from the start date’s dd).
+	•	A paragraph with the formatted date or range (<p class="xv-key-date">).
+	•	A bold, uppercase title (<h4 class="xv-date-title text-uppercase">).
+	•	Date formatting logic:
+	•	Single date → MMMM d, yyyy (e.g., August 18, 2025).
+	•	Range, different years → MMMM d, yyyy - MMMM d, yyyy.
+	•	Range, same year different months → MMMM d - MMMM d, yyyy.
+	•	Range, same month/year → MMMM d - d, yyyy.
+	•	Responsive behavior: 3 items per row on small+ screens; stacks to 1 per row on phones.
+	•	Accessibility: Region is labeled “Important Dates”; the full date string is provided in text for screen readers.
+DATA – Contact Info
+Provides a compact contact block with a heading, optional subheading, and one or more contact details (phone and/or email). Useful for quick “who to reach” sections—often placed on a green CTA band.
+
+How to Enable: Set the Type field in a rows entry to DATA – Contact Info.
+Fields / Parameters:
+	•	Heading (Text — optional) — Section title (e.g., “Contact Info”).
+	•	Subheading (Text — optional) — Brief qualifier under the heading.
+	•	Detail (Group — repeatable) — Each row shows one line of contact info:
+	•	Type (Radio — required) — Phone or Email.
+	•	Text (Text — required) — The phone number or email address to display.
+Rendered Output:
+	•	Outputs a <div role="region" aria-label="Contact Us" class="row pb-4"> containing:
+	•	Heading as <p class="xv-section-title xv-text-white">.
+	•	Subheading as a bold paragraph directly beneath the heading.
+	•	For each detail, a paragraph with a leading Font Awesome icon and the supplied text:
+	•	Phone → <i class="fas fa-phone" aria-hidden="true"> followed by the number.
+	•	Email → <i class="fas fa-envelope" aria-hidden="true"> followed by the address.
+	•	Icons are decorative (aria-hidden="true"); the readable phone/email text remains accessible.
+	•	Layout inherits the current section’s styling (commonly a full-width green CTA background) and stacks naturally on small screens.
+DATA – Staff Members
+Displays a grid of staff “cards” with headshot, name, title/department, and optional contact info. Cards can be populated manually or pulled from an existing Directory page. Commonly used for department rosters.
+
+How to Enable: Set the Type field in a rows entry to Staff Members.
+Fields / Parameters:
+	•	Heading (Text — optional) — Section title (e.g., “Staff Members”).
+	•	Staff Members (Group — repeatable) — One entry per person:
+	•	Type (Radio — required) — Manual or Directory.
+	•	If Type = Manual
+	•	Member Block (Block — required) — Select a person block that contains:
+	•	Image (File — recommended square) — Headshot.
+	•	Name (Text — required).
+	•	Title (Text — optional) — Job title.
+	•	Phone (Text — optional).
+	•	Email (Text — optional).
+	•	If Type = Directory
+	•	Directory Page (Page — required) — Select an existing profile page. The component reads:
+	•	Headshot (structured data node).
+	•	First Name + Last Name (metadata dynamic fields).
+	•	Position Title and Department (metadata dynamic fields).
+	•	Phone, Email (metadata dynamic fields).
+	•	The card image links to the selected directory page.
+Rendered Output:
+	•	Section heading as <h1>${heading}</h1> when provided.
+	•	Cards are rendered inside a single row, three per row, with automatic wrapping:
+	•	Grid container: <div class="row pt-4">
+	•	Card: <div class="xv-content-box col-md-4 col-sm-4 col-xs-12 pb-4">
+	•	Headshot:  <a href="{directoryPage.link (Directory only)}">  <img class="img-responsive" src="{image.link}" alt="{Full Name}">  </a>
+	•	Manual entries render the same markup with an empty link target (no navigation).
+	•	Name: <p class="monteextrabold color-black" style="font-weight:bold; padding:5px; font-size:1.8em">{Name}</p>
+	•	Title/Dept (optional): <p class="xv-text-new-line">{Position Title}, {Department}</p>
+	•	Contact list (optional, shown if phone and/or email present):  <ul class="xv-links-list">  <li><i class="fas fa-phone" aria-hidden="true" style="transform: rotateY(180deg)"></i> {Phone}</li>  <li><a href="mailto:{Email}"><i class="fas fa-envelope" aria-hidden="true"></i> {Email}</a></li>  </ul>
+	•	A new .row starts after every third card so the grid stays aligned.
+PEOPLE – Block – Featured Students
+Shows a grid of student highlight cards with circular headshots, name, italic major/year, and a short blurb. Great for showcasing ambassadors, peer mentors, or recent grads.
+
+How to Enable: Set the Type field in a rows entry to PEOPLE – Block – Featured Students.
+Fields / Parameters:
+	•	Heading (Text — optional) — Section title (renders as <h2>).
+	•	Content (Text/Rich — optional) — One intro paragraph under the heading.
+	•	Subheading (Text — optional) — Centered subhead below the intro (renders as <h1>).
+	•	Number of Cards (Select — required) — 2, 3, or 4; controls the column count on wide screens.
+	•	Block (Group — repeatable, 1–4) — One per student:
+	•	Image (File — optional) — Headshot; circular crop in UI.  If empty, falls back to site://_XULA/itc/profile-img.png.
+	•	Name (Text — required).
+	•	Current Major w/ Year (Text — optional) — e.g., “Biology, 2026”.
+	•	Description (Textarea — optional) — 1–3 sentences.
+	•	Link (Link — optional) — When present, the headshot becomes clickable.
+Rendered Output:
+	•	Wrapper: <section class="featured-students"> → .wrapper → .highlights.
+	•	Heading as <h2>; intro as <p class="highlights_desc">; subheading as centered <h1>.
+	•	Grid container: <div class="highlights_wrapper highlights_wrapper{2|3|4}">.
+	•	Each card (.highlight, light gray background) contains:
+	•	Optional <a href="{url}"> wrapping the image only.
+	•	<img class="rounded"> circular headshot (visually 100×100), floated left with 20px right margin.
+	•	<h5> with:
+	•	<span class="highlights_content-name"> Name (bold, green #00a887).
+	•	<span class="highlights_content-attr"> Current Major w/ Year (italic, green) when provided.
+	•	<h5 class="highlights-content"> Description, if provided.
+Layout & Responsiveness:
+	•	On small/medium screens: single-column stack.
+	•	At ≥85rem viewport: column count matches Number of Cards (2, 3, or 4).
+	•	The internal .wrapper extends slightly (120% width with a -10% offset) to align with design gutters.
+NEWS – News
+Provides a News (and optional Events) block that pulls the latest posts from the News site and renders them in a two-column “Department News + Events” layout. A second “Homepage” variation (three feature cards + headline list + optional “Read More”) is also available in this format’s source and can be enabled if you use that template.
+
+How to Enable
+Set the Type field in a rows entry to NEWS – News.
+Fields / Parameters
+	•	Heading (Text — optional) — Section title (e.g., “News Heading”).
+	•	Subheading (Text — optional) — Brief qualifier under the heading.
+	•	News Category (Select — required) — All or a single News category. Filters posts.
+	•	Events Block (Block — optional) — Reference to an Events block; renders in the right column of the Department layout.
+	•	Link (Link — optional, homepage variant) — Label + URL for a “Read More” button.
+Data & Logic
+	•	Source: Queries site://News/Post (site name: News).
+	•	Filter: If News Category ≠ All, only posts with that category are included.
+	•	Sort/Count: Newest first by startDate; max 8 items. Posts without a start date are dropped.
+	•	Image selection (per post):
+	•	If Add Image = “yes” → use image + alt.
+	•	Else if Banner.display = “Yes” → use banner.image + banner.alt.
+	•	Else → fall back to the format’s default image/alt.
+	•	Date format: MMMM d, yyyy (e.g., “August 6, 2025”).
+	•	Categories display: Comma-separated list from the post’s category dynamic field.
+NEWS – Block: News & Events
+Outputs a two-column “News | Events” block with an optional page heading/subheading on top. The left column lists recent News posts; the right column embeds the Events block. Ideal for department/landing pages.
+
+How to enable: Set the Type of a rows entry to NEWS – Block – News & Events.
+Fields / Parameters:
+	•	Heading (Text — optional) — Big page/title above the block.
+	•	Subheading (Text — optional) — Short line under the heading.
+	•	News Category (Select/Text — optional, default: “All”) — When set, shows posts whose metadata.category includes this value. “All” shows every post.
+	•	Events Block (Group — required) — Passed to the HH Events Block formatter (use that component’s fields).
+Behavior & data rules:
+	•	News query: Up to 8 items from site News, content type News/Post, sorted by startDate desc. Posts without a startDate are skipped.
+	•	Image resolution order:
+	•	Post SD addImage = “yes” → use image + alt
+	•	Else if banner display = “Yes” → use banner image + alt
+	•	Else → use the formatter’s default image/alt.
+	•	Display per item: Thumbnail → categories (comma-separated) + date (e.g., August 6, 2025) → title. Entire item is a single link. A divider (role="separator") follows each item.
+	•	Empty states:
+	•	News: shows “No articles at this time.”
+	•	Events: the embedded block shows “No upcoming events found.” when the calendar is empty (as in the screenshot).
+Rendered output (structure & classes):
+	•	Wraps in <section class="pb-4 pt-4">.
+	•	Optional heading <h1> and subheading <p>.
+	•	Left column (News):
+	•	<h3 class="xv-h3 color-black xv-header-border">NEWS</h3> then a list of links.
+	•	Right column (Events):
+	•	<h3 class="xv-h3 color-black xv-header-border">EVENTS</h3> then #outputHHEventsBlock(...) markup.
+NEWS – Block: Events Slider
+A horizontal slider of upcoming events with a left-aligned heading and an optional right-aligned “Read More” link. Pulls its data from the shared Events system (via the HH Events Block). Ideal for homepages and section landers.
+
+How to enable Set the Type of a rows entry to NEWS – Block – Events Slider.
+Fields / Parameters
+	•	Heading (Text — optional) — Title shown at the top-left of the slider (e.g., “Upcoming Events”).
+	•	Link (Group — optional) — Standard link fields from our shared link picker.
+	•	If the link Type is “none,” nothing is shown.
+	•	If provided, a right-aligned text link appears (rendered as “Label >”).
+	•	Events Block (Group — required) — Passed directly to HH Events Block. That block controls what calendar(s) to use, how many items, filters, and formatting. See the HH Events Block docs for its specific fields.
+	•	Layout width (Select/Radio — optional) — Standard (default, constrained to the page container) or Full-width (stretches edge-to-edge).
+Behavior & data rules
+	•	Events content and ordering come entirely from the HH Events Block configuration supplied here.
+	•	The slider uses previous/next arrow controls; multiple instances on a page each get a unique carousel ID so arrows control the correct slider.
+	•	If there are no upcoming events, the component displays the empty-state message “No upcoming events found.” (as in your screenshot). The arrows remain visible but have no effect.
+Accessibility
+	•	The whole section is exposed as a landmark region labeled “Upcoming Events.”
+	•	The “Read More” link is announced by its label.
+	•	Prev/Next controls include clear accessible labels; the icons are purely visual.
+Layout & responsiveness
+	•	Default is a centered, constrained container; full-width option removes side gutters to span the viewport.
+	•	On wider screens, the heading sits at left and the link at right above a horizontal rule; on small screens they stack naturally.
+	•	The slider height adapts to the tallest event card in the current frame.
+STATS – Statistics
+Displays a compact row (or rows) of numeric/key-figure “stats,” each with a short label. Ideal for quick metrics (retention rate, student-to-faculty ratio, GPA, etc.).
+
+How to enable Set the Type of a Rows entry to STATS – Statistics.
+Fields / parameters
+	•	Title (Text — optional) — Section heading shown above the stats.
+	•	Block (Group — repeatable) — One per statistic.
+	•	Value (Text — required) — The big number/text to emphasize (e.g., 87%, 18:1, 3.6).
+	•	Details (Text — required) — Short descriptor under the value (e.g., “First-year retention rate”).
+Rendered output (high level, no code)
+	•	Wrapped in the standard site container and row grid.
+	•	If Title is provided, it renders as a section heading with the site’s large heading style (class xv-h7).
+	•	Each Block renders as:
+	•	A prominent value styled with xv-h8.
+	•	A brief descriptor styled with xv-text-desc.
+Layout & responsiveness
+	•	Three stats per row on small/medium viewports and up (Bootstrap col-sm-4 / col-md-4).
+	•	One stat per row on extra-small screens (stacks vertically).
+	•	Add as many blocks as you like; items wrap into additional rows in groups of three.
+	•	Spacing and colors inherit from the surrounding section; this component drops cleanly onto light, dark, or branded bands.
+Accessibility
+	•	The title is a true heading, improving page outline.
+	•	Values and labels are plain text (not images), so they’re read correctly by screen readers.
+	•	Content guidance for clarity: prefer “87 percent — First-year retention rate” over ambiguous abbreviations; avoid decorative punctuation that changes meaning when read aloud.
+Empty/edge states
+	•	If Title is blank, it’s simply omitted.
+	•	If no Block items are provided, the section renders with no stats (there’s no built-in fallback message). Ensure at least one block is entered
+STATS – Block · Testimonial / Quote Box
+Shows one or more testimonials/quotes in equal-width cards, with an optional section heading, intro text, and subheading. Great for short quotes with a name and brief attribution.
+
+How to enable Set the Type of a Rows entry to STATS – Block · Testimonial or Quote Box.
+Fields / parameters
+	•	Heading (Text — optional) — Section title above the quotes.
+	•	Content (Rich text — optional) — Short intro copy under the heading.
+	•	Subheading (Text — optional) — Large, bold line between the intro and the cards.
+	•	Block Quote (Group/Asset — repeatable; one per card)
+	•	Quote (Text — required) — The testimonial text.
+	•	Name (Text — optional) — Person being quoted.
+	•	Attribution/Subheading (Text — optional) — Role, program, year, source, etc.
+Rendered output (high level)
+	•	Section wrapper with standard grid container.
+	•	If present:
+	•	Heading appears as a large section heading.
+	•	Content appears as a centered paragraph beneath the heading.
+	•	Subheading appears as a prominent, bold line before the cards.
+	•	Quotes render as cards laid out in a responsive grid:
+	•	A decorative left-quote icon at the top of each card.
+	•	Quote text in a large, readable style.
+	•	Name on its own line.
+	•	Attribution in italic beneath the name.
+Layout & responsiveness
+	•	Cards are stacked in one column on small screens.
+	•	On wide screens (desktop), the grid adapts to the number of items supplied:
+	•	2 items → 2 columns
+	•	3 items → 3 columns
+	•	4 items → 4 columns
+	•	Comfortable spacing between cards; cards use a light gray panel background to differentiate from the page.
+	•	The section subtly “breathes” wider than the main column on large screens for a banded feel.
+Accessibility
+	•	All text (heading, quote, name, attribution) is plain, selectable text.
+	•	The quote icon is decorative and hidden from assistive tech; the quote itself is what’s read.
+	•	Keep names and attributions concise for screen-reader clarity.
+Empty/edge states
+	•	If Heading, Content, or Subheading are omitted, they simply don’t render—no empty gaps.
+	•	Within a card, Name and Attribution are optional; if blank, they’re not shown.
+	•	If no Block Quote items exist, the section renders without cards (no fallback message)
