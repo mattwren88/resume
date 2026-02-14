@@ -1,3 +1,42 @@
+/*
+ * styles.css — mattwren.dev
+ *
+ * Main stylesheet for the portfolio/resume site.
+ * Theme-specific tokens (colors, fonts, radii) live in themes.css.
+ * This file owns spacing, type scale, layout, and component styles.
+ *
+ * Table of Contents
+ * -----------------
+ *  1. Custom Properties  — spacing & type scale tokens
+ *  2. Reset              — box-sizing, margin/padding zero-out
+ *  3. Body               — base font, color, background, transitions
+ *  4. Page Transitions   — slide/fade animations between pages
+ *  5. Typography         — headings, links, paragraphs
+ *  6. Background Deco    — noise overlay, blurred bg shapes
+ *  7. Page Layout        — max-width wrapper, padding
+ *  8. Navigation         — top nav, brand, links, pill indicator
+ *  9. Theme Toggle       — fixed theme-switcher button
+ * 10. Hero               — hero section, photo, copy, meta card
+ * 11. Buttons            — primary & secondary button styles
+ * 12. Service Grid       — 3-col service card grid
+ * 13. Capability Grid    — auto-fit capability card grid
+ * 14. Contact Form       — form layout, inputs, honeypot
+ * 15. Hero Links         — sidebar contact/social links
+ * 16. Grid Layout        — sidebar + content two-col grid
+ * 17. Cards & Rows       — card component, row utility
+ * 18. Type Elements      — h2, h3, divider, lists
+ * 19. Pill & Stack Lists — tag pills, plain stacked list
+ * 20. Timeline           — work history timeline
+ * 21. Project Grid       — project item list
+ * 22. Footer             — site footer, footer links
+ * 23. Blog               — blog list, blog card, meta
+ * 24. Markdown Article   — rendered blog post styles
+ * 25. Print              — print-optimised overrides
+ * 26. Reduced Motion     — disables transitions for a11y
+ * 27. Responsive 980px   — tablet breakpoint
+ * 28. Responsive 640px   — mobile breakpoint
+ */
+
 :root {
   --text-xs: 0.72rem;
   --text-sm: 0.85rem;
