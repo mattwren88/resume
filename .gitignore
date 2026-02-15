@@ -1,2 +1,4 @@
 .DS_Store
 ._*
+projects/
+scripts/cascade-creds.json
