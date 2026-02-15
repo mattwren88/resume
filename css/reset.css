@@ -1,0 +1,7 @@
+/* reset.css — box-sizing, margin/padding zero-out */
+
+:where(*, *::before, *::after) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

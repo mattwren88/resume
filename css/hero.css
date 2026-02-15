@@ -1,0 +1,107 @@
+/* hero.css — hero section, photo, copy, meta card, eyebrow, h1, role */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+
+  & .hero-identity {
+    --hero-photo-size: 160px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  & .hero-photo {
+    width: var(--hero-photo-size);
+    height: var(--hero-photo-size);
+    border-radius: 100vh;
+    overflow: hidden;
+    border: 4px solid var(--hero-photo-border);
+    box-shadow: var(--hero-photo-shadow);
+    transform: none;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Keep these stable across cross-page transitions (About <-> Resume). */
+.hero .hero-photo,
+.hero .hero-copy h1 {
+  view-transition-name: none;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--text-eyebrow);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-weight: var(--type-weight-h1);
+  font-size: var(--text-hero);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.role {
+  font-size: var(--text-lg);
+  color: var(--muted);
+}
+
+.hero-meta {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--card-border);
+}
+
+.hero-copy {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.hero-blurb {
+  font-size: var(--text-md);
+  max-width: 320px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.landing-hero h1 {
+text-wrap: balance;
+}
+
+.hero-links {
+  display: grid;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--muted);
+
+  & a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  & .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+}

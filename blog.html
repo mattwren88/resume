@@ -15,8 +15,7 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="themes.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div class="noise"></div>
@@ -79,18 +78,7 @@
           <p class="role">Short articles on SEO, performance, accessibility, and CMS workflows.</p>
         </section>
 
-        <section class="blog-list" aria-label="Articles">
-          <article class="card blog-card">
-            <p class="blog-meta">January 11, 2026</p>
-            <h2><a href="blog-post.html?post=seo-basics">3 SEO Basics Most Business Sites Miss</a></h2>
-            <p>Simple technical fixes that increase discoverability without a full rewrite.</p>
-          </article>
-          <article class="card blog-card">
-            <p class="blog-meta">January 4, 2026</p>
-            <h2><a href="blog-post.html?post=performance-audit-checklist">A Fast Performance Audit Checklist for Small Teams</a></h2>
-            <p>A repeatable process to find and fix front-end bottlenecks quickly.</p>
-          </article>
-        </section>
+        <section class="blog-list" aria-label="Articles" data-blog-list></section>
       </div>
 
       <footer class="site-footer">
@@ -105,5 +93,6 @@
       </footer>
     </main>
     <script src="scripts/site.js"></script>
+    <script src="scripts/blog.js"></script>
   </body>
 </html>

@@ -1,13 +1,28 @@
-const postMap = {
-  'seo-basics': {
+const posts = [
+  {
+    slug: 'ai-environmental-impact',
+    path: 'content/blog/ai-environmental-impact.md',
+    title: 'Does Using AI Hurt the Environment? What the Data Actually Says',
+    date: 'February 15, 2026',
+    description: 'Separating fact from misinformation about AI\'s energy use, water consumption, and what actually matters.',
+  },
+  {
+    slug: 'seo-basics',
     path: 'content/blog/seo-basics.md',
-    fallbackTitle: '3 SEO Basics Most Business Sites Miss',
+    title: '3 SEO Basics Most Business Sites Miss',
+    date: 'January 11, 2026',
+    description: 'Simple technical fixes that increase discoverability without a full rewrite.',
   },
-  'performance-audit-checklist': {
+  {
+    slug: 'performance-audit-checklist',
     path: 'content/blog/performance-audit-checklist.md',
-    fallbackTitle: 'A Fast Performance Audit Checklist for Small Teams',
+    title: 'A Fast Performance Audit Checklist for Small Teams',
+    date: 'January 4, 2026',
+    description: 'A repeatable process to find and fix front-end bottlenecks quickly.',
   },
-};
+];
+
+const postMap = Object.fromEntries(posts.map((p) => [p.slug, p]));
 
 const escapeHtml = (text) =>
   text
@@ -100,11 +115,28 @@ const loadPost = async () => {
     const markdown = await response.text();
     container.innerHTML = markdownToHtml(markdown);
 
-    const title = container.querySelector('h1')?.textContent || entry.fallbackTitle;
+    const title = container.querySelector('h1')?.textContent || entry.title;
     document.title = `${title} | Matthew Wren`;
   } catch (error) {
     renderError(container);
   }
 };
 
+const renderBlogList = () => {
+  const container = document.querySelector('[data-blog-list]');
+  if (!container) return;
+
+  container.innerHTML = posts
+    .map(
+      (post) =>
+        `<article class="card blog-card">
+          <p class="blog-meta">${escapeHtml(post.date)}</p>
+          <h2><a href="blog-post.html?post=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a></h2>
+          <p>${escapeHtml(post.description)}</p>
+        </article>`
+    )
+    .join('\n');
+};
+
 void loadPost();
+renderBlogList();

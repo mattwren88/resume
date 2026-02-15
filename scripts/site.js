@@ -1,7 +1,7 @@
 const toggle = document.querySelector('.theme-toggle');
 const icon = toggle?.querySelector('.theme-toggle__icon');
 const stored = localStorage.getItem('theme');
-const themes = ['heritage', 'editorial', 'brutalist'];
+const themes = ['heritage', 'brutalist', 'terminal', 'xerox', 'noir'];
 const initial = themes.includes(stored || '') ? stored : 'heritage';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -16,8 +16,10 @@ const updateToggle = () => {
   if (icon) {
     const shorthand = {
       heritage: 'H',
-      editorial: 'E',
       brutalist: 'B',
+      terminal: 'T',
+      xerox: 'X',
+      noir: 'N',
     };
     icon.textContent = shorthand[current] || 'T';
   }
