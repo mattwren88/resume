@@ -1,7 +1,7 @@
 # CLAUDE.md — mattwren.dev
 
 ## Pending Tasks
-- Add a detailed inline comment to every CSS property in `styles.css` and `themes.css` explaining what each property does
+- Add a detailed inline comment to every CSS property in `css/` files explaining what each property does
 
 ## Project Overview
 Static portfolio/resume website for Matt Wren, a web developer specializing in local business websites. Deployed at **mattwren.dev** via GitHub Pages.
@@ -16,12 +16,20 @@ Static portfolio/resume website for Matt Wren, a web developer specializing in l
 |------|---------|
 | `index.html` | Home / landing page |
 | `about.html` | About page |
-| `resume.html` | Resume page |
+| `resume.html` | Redirect → about.html |
 | `blog.html` | Blog listing |
 | `blog-post.html` | Blog post template |
 | `contact.html` | Contact form |
-| `styles.css` | Main stylesheet |
-| `themes.css` | Theme variants (heritage, editorial, brutalist) |
+| `css/main.css` | CSS entry point (`@import`s all partials) |
+| `css/themes.css` | Theme variants (heritage, editorial, brutalist) |
+| `css/base.css` | Root tokens, body styles, typography, background deco |
+| `css/layout.css` | Page wrapper, grid layout, sidebar |
+| `css/nav.css` | Top nav, brand, logo, nav links, theme toggle |
+| `css/hero.css` | Hero section, photo, copy, meta card |
+| `css/components.css` | Buttons, cards, grids, forms, timeline, blog, footer |
+| `css/print.css` | Print-optimised overrides |
+| `css/responsive.css` | Reduced motion, tablet, mobile breakpoints |
+| `css/reset.css` | Box-sizing, margin/padding reset |
 | `scripts/site.js` | Theme switching, nav animations, misc JS |
 | `scripts/blog.js` | Blog post rendering from Markdown |
 | `content/blog/` | Blog post Markdown files |
@@ -29,7 +37,7 @@ Static portfolio/resume website for Matt Wren, a web developer specializing in l
 | `docs/` | Reference docs, case studies, LinkedIn export, SEO.md, README.md |
 
 ## Design System
-CSS custom properties defined in `styles.css` (spacing/type scale) and `themes.css` (colors/typography/radii per theme):
+CSS custom properties defined in `css/base.css` (spacing/type scale) and `css/themes.css` (colors/typography/radii per theme):
 - **Colors:** `--ink`, `--muted`, `--accent`, `--accent-soft`, `--surface`, `--line`, `--bg-body`
 - **Shadows:** `--shadow`, `--shadow-soft`
 - **Spacing:** `--space-xs` through `--space-2xl`
