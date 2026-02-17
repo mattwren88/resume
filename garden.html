@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Zone 6a Corner Garden Master Plan (Scranton, PA)</title>
+        <meta
+            name="description"
+            content="A definitive planning guide for a structured native corner garden in USDA Zone 6a (Scranton, PA): plant layers, timing, soil prep, irrigation, layout, maintenance." />
+        <style>
+            :root {
+                --bg: #0b0f14;
+                --card: #101722;
+                --muted: #aab6c5;
+                --text: #e8eef6;
+                --line: rgba(255, 255, 255, 0.1);
+                --accent: #7dd3fc;
+                --accent2: #86efac;
+                --warn: #fbbf24;
+                --bad: #fb7185;
+                --mono:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", "Courier New", monospace;
+                --sans:
+                    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+                    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+                --radius: 14px;
+                --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                font-family: var(--sans);
+                background:
+                    radial-gradient(
+                        1200px 600px at 20% 0%,
+                        rgba(125, 211, 252, 0.1),
+                        transparent 60%
+                    ),
+                    radial-gradient(
+                        900px 500px at 80% 0%,
+                        rgba(134, 239, 172, 0.08),
+                        transparent 55%
+                    ),
+                    var(--bg);
+                color: var(--text);
+                line-height: 1.55;
+            }
+            a {
+                color: var(--accent);
+            }
+            .wrap {
+                max-width: 1024px;
+                margin: 0 auto;
+                padding: 28px 18px 64px;
+            }
+            header {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                align-items: flex-end;
+                justify-content: space-between;
+                padding: 22px 22px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.06),
+                    rgba(255, 255, 255, 0.02)
+                );
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+            }
+            h1 {
+                margin: 0;
+                font-size: 1.55rem;
+                letter-spacing: 0.2px;
+            }
+            .sub {
+                margin: 6px 0 0;
+                color: var(--muted);
+                max-width: 62ch;
+                font-size: 0.95rem;
+            }
+            .meta {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-end;
+                margin-left: auto;
+            }
+            .pill {
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.03);
+                padding: 6px 10px;
+                border-radius: 999px;
+                font-size: 0.82rem;
+                color: var(--muted);
+                display: inline-flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .pill strong {
+                color: var(--text);
+                font-weight: 600;
+            }
+            nav {
+                margin: 18px 0 0;
+                padding: 14px 16px;
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+                background: rgba(255, 255, 255, 0.02);
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            nav a {
+                text-decoration: none;
+                border: 1px solid var(--line);
+                padding: 7px 10px;
+                border-radius: 10px;
+                color: var(--text);
+                background: rgba(255, 255, 255, 0.03);
+                font-size: 0.88rem;
+            }
+            nav a:hover {
+                border-color: rgba(125, 211, 252, 0.55);
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin-top: 18px;
+            }
+            @media (min-width: 920px) {
+                .grid {
+                    grid-template-columns: 1.05fr 0.95fr;
+                }
+                .span2 {
+                    grid-column: 1 / -1;
+                }
+            }
+            section.card {
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.02)
+                );
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+                padding: 18px 18px;
+                box-shadow: var(--shadow);
+            }
+            section.card h2 {
+                margin: 0 0 10px;
+                font-size: 1.05rem;
+                letter-spacing: 0.2px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            section.card h3 {
+                margin: 14px 0 8px;
+                font-size: 0.98rem;
+                color: var(--text);
+            }
+            p {
+                margin: 10px 0;
+                color: var(--text);
+            }
+            .muted {
+                color: var(--muted);
+            }
+            ul {
+                margin: 8px 0 0;
+                padding-left: 18px;
+                color: var(--text);
+            }
+            li {
+                margin: 6px 0;
+            }
+            .cols {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            @media (min-width: 700px) {
+                .cols {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+            .callout {
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.03);
+                border-left: 4px solid var(--accent);
+                padding: 12px 12px;
+                border-radius: 12px;
+                margin-top: 10px;
+                color: var(--muted);
+            }
+            .callout.warn {
+                border-left-color: var(--warn);
+            }
+            .callout.bad {
+                border-left-color: var(--bad);
+            }
+            .kbd {
+                font-family: var(--mono);
+                font-size: 0.86rem;
+                background: rgba(0, 0, 0, 0.35);
+                border: 1px solid var(--line);
+                padding: 1px 6px;
+                border-radius: 8px;
+                color: var(--text);
+            }
+            .table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                overflow: hidden;
+                border: 1px solid var(--line);
+                border-radius: 12px;
+                margin-top: 10px;
+            }
+            .table th,
+            .table td {
+                text-align: left;
+                padding: 10px 12px;
+                border-bottom: 1px solid var(--line);
+                vertical-align: top;
+                font-size: 0.92rem;
+            }
+            .table th {
+                color: var(--muted);
+                font-weight: 600;
+                background: rgba(255, 255, 255, 0.03);
+            }
+            .table tr:last-child td {
+                border-bottom: none;
+            }
+            .tag {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 2px 8px;
+                border-radius: 999px;
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.03);
+                color: var(--muted);
+                font-size: 0.82rem;
+                white-space: nowrap;
+            }
+            .tag .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--accent);
+            }
+            .tag.green .dot {
+                background: var(--accent2);
+            }
+            .tag.warn .dot {
+                background: var(--warn);
+            }
+            .tag.bad .dot {
+                background: var(--bad);
+            }
+            pre {
+                margin: 10px 0 0;
+                padding: 12px 12px;
+                border-radius: 12px;
+                border: 1px solid var(--line);
+                background: rgba(0, 0, 0, 0.35);
+                overflow: auto;
+                font-family: var(--mono);
+                font-size: 0.88rem;
+                line-height: 1.45;
+                color: var(--text);
+            }
+            footer {
+                margin-top: 18px;
+                padding: 14px 16px;
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+                background: rgba(255, 255, 255, 0.02);
+                color: var(--muted);
+                font-size: 0.9rem;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .small {
+                font-size: 0.88rem;
+            }
+            .hr {
+                height: 1px;
+                background: var(--line);
+                margin: 12px 0;
+            }
+            .print {
+                cursor: pointer;
+            }
+            @media print {
+                body {
+                    background: #fff;
+                    color: #111;
+                }
+                header,
+                nav,
+                section.card,
+                footer {
+                    box-shadow: none;
+                }
+                header,
+                nav,
+                section.card,
+                footer {
+                    border-color: #ddd;
+                }
+                .pill,
+                nav a,
+                .tag {
+                    border-color: #ddd;
+                    background: #f7f7f7;
+                    color: #333;
+                }
+                .callout {
+                    border-color: #ddd;
+                    background: #fafafa;
+                }
+                pre {
+                    background: #f7f7f7;
+                    border-color: #ddd;
+                    color: #111;
+                }
+                a {
+                    color: #111;
+                    text-decoration: underline;
+                }
+                .print {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <header>
+                <div>
+                    <h1>Zone 6a Corner Garden Master Plan</h1>
+                    <div class="sub">
+                        Definitive planning guide for a structured,
+                        native-leaning corner bed in
+                        <strong>Scranton, PA</strong> (USDA Zone 6a). Designed
+                        for visibility, low ongoing maintenance, and long-term
+                        property value.
+                    </div>
+                </div>
+                <div class="meta">
+                    <div class="pill">
+                        <strong>USDA Zone</strong> 6a
+                        <span class="muted">(-10°F to -5°F)</span>
+                    </div>
+                    <div class="pill">
+                        <strong>Best plant windows</strong> May–mid Jun •
+                        Sep–early Oct
+                    </div>
+                    <div class="pill print" onclick="window.print()">
+                        <strong>Print</strong> PDF-friendly
+                    </div>
+                </div>
+            </header>
+
+            <nav aria-label="Page navigation">
+                <a href="#zone6a">Zone 6a constraints</a>
+                <a href="#zones">Bed zones</a>
+                <a href="#plants">Plant palette</a>
+                <a href="#timing">Timing</a>
+                <a href="#install">Installation</a>
+                <a href="#water">Watering</a>
+                <a href="#mulch">Mulch</a>
+                <a href="#layout">Layout</a>
+                <a href="#maintenance">Maintenance</a>
+                <a href="#pitfalls">Failure points</a>
+                <a href="#budget">Budget</a>
+                <a href="#future">Future garage constraint</a>
+            </nav>
+
+            <div class="grid">
+                <section class="card" id="zone6a">
+                    <h2>📍 Zone 6a constraints (Scranton, PA)</h2>
+                    <div class="cols">
+                        <div>
+                            <ul>
+                                <li>
+                                    <strong>USDA Zone:</strong>
+                                    <span class="kbd">6a</span> (avg annual min
+                                    <strong>-10°F to -5°F</strong>)
+                                </li>
+                                <li>
+                                    <strong>Typical last frost:</strong> ~May
+                                    10–15
+                                </li>
+                                <li>
+                                    <strong>Typical first frost:</strong> ~Oct
+                                    10–15
+                                </li>
+                                <li><strong>Season:</strong> ~150 days</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <strong>Soil tendency:</strong> compacted
+                                    clay-loam
+                                </li>
+                                <li>
+                                    <strong>Climate realities:</strong>
+                                    freeze/thaw, snow load, occasional summer
+                                    drought
+                                </li>
+                                <li>
+                                    <strong>Corner lot factor:</strong>
+                                    visibility + potential utility easements
+                                    near alleys
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="callout warn">
+                        <strong>Non-negotiable:</strong> Call
+                        <span class="kbd">811</span> for utility markout before
+                        any digging near alley edges. Corner lots often have
+                        buried lines.
+                    </div>
+                </section>
+
+                <section class="card" id="zones">
+                    <h2>🧩 Bed zones (layered structure)</h2>
+                    <p class="muted">
+                        This is not “a bunch of plants.” It’s a layered system
+                        that looks intentional year-round.
+                    </p>
+
+                    <table
+                        class="table"
+                        role="table"
+                        aria-label="Garden layer zones">
+                        <thead>
+                            <tr>
+                                <th>Zone</th>
+                                <th>Height</th>
+                                <th>Job</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="tag"
+                                        ><span class="dot"></span>Zone A —
+                                        Canopy</span
+                                    >
+                                </td>
+                                <td>10–20 ft</td>
+                                <td>
+                                    Primary structure, seasonal interest,
+                                    long-term value anchor
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="tag green"
+                                        ><span class="dot"></span>Zone B — Shrub
+                                        layer</span
+                                    >
+                                </td>
+                                <td>4–8 ft</td>
+                                <td>
+                                    Mass, privacy, winter structure, bird
+                                    habitat
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="tag warn"
+                                        ><span class="dot"></span>Zone C —
+                                        Perennial layer</span
+                                    >
+                                </td>
+                                <td>1–3 ft</td>
+                                <td>
+                                    Color, pollinators, texture; fills the
+                                    “front” of the bed
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="tag bad"
+                                        ><span class="dot"></span>Zone D —
+                                        Ground layer</span
+                                    >
+                                </td>
+                                <td>0–1 ft</td>
+                                <td>
+                                    Weed suppression + cohesion
+                                    (grasses/groundcovers), clean edge read
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="card span2" id="plants">
+                    <h2>🌿 Plant palette (Zone 6a-safe)</h2>
+                    <p class="muted">
+                        Everything below is hardy to Zone 6a or colder. Prefer
+                        <strong>1.5–2" caliper trees</strong>,
+                        <strong>3-gallon shrubs</strong>, and perennials in
+                        repeat clusters (not “one of everything”).
+                    </p>
+
+                    <div class="cols">
+                        <div>
+                            <h3>Zone A — Canopy trees (pick 2)</h3>
+                            <ul>
+                                <li>
+                                    <strong>Eastern Redbud</strong> (<em
+                                        >Cercis canadensis</em
+                                    >) — Zone 4–9
+                                </li>
+                                <li>
+                                    <strong>Serviceberry</strong> (<em
+                                        >Amelanchier</em
+                                    >
+                                    spp.) — Zone 4–8
+                                </li>
+                                <li>
+                                    <strong>Flowering Dogwood</strong> (<em
+                                        >Cornus florida</em
+                                    >) — Zone 5–9 (site-dependent)
+                                </li>
+                                <li>
+                                    <strong>River Birch</strong> (<em
+                                        >Betula nigra</em
+                                    >) — Zone 4–9 (good if soil stays moist)
+                                </li>
+                            </ul>
+                            <div class="callout bad">
+                                <strong>Avoid:</strong> Bradford pear, weak-wood
+                                fast growers, and any large canopy tree if you
+                                may build a driveway/garage later.
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Zone B — Shrubs (5–7 total)</h3>
+                            <ul>
+                                <li>
+                                    <strong>Ninebark</strong> (<em
+                                        >Physocarpus opulifolius</em
+                                    >) — Zone 2–8
+                                </li>
+                                <li>
+                                    <strong>Inkberry Holly</strong> (<em
+                                        >Ilex glabra</em
+                                    >) — Zone 4–9
+                                </li>
+                                <li>
+                                    <strong>Arrowwood Viburnum</strong> (<em
+                                        >Viburnum dentatum</em
+                                    >) — Zone 3–8
+                                </li>
+                                <li>
+                                    <strong>Red Twig Dogwood</strong> (<em
+                                        >Cornus sericea</em
+                                    >) — Zone 3–7
+                                </li>
+                            </ul>
+                            <div class="callout">
+                                <strong>Scranton logic:</strong> favor shrubs
+                                with winter presence (branch color, structure)
+                                because your yard is “on display” in January
+                                too.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="cols">
+                        <div>
+                            <h3>Zone C — Perennials (15–25 plants)</h3>
+                            <ul>
+                                <li>
+                                    <strong>Black-eyed Susan</strong>
+                                    (<em>Rudbeckia</em>) — Zone 3–9
+                                </li>
+                                <li>
+                                    <strong>Purple Coneflower</strong>
+                                    (<em>Echinacea</em>) — Zone 3–9
+                                </li>
+                                <li>
+                                    <strong>Salvia</strong> (<em
+                                        >Salvia nemorosa</em
+                                    >) — Zone 4–8
+                                </li>
+                                <li>
+                                    <strong>Catmint</strong> (<em>Nepeta</em>) —
+                                    Zone 3–8
+                                </li>
+                                <li>
+                                    <strong>Sedum</strong> (e.g., ‘Autumn Joy’)
+                                    — Zone 3–9
+                                </li>
+                                <li><strong>Coreopsis</strong> — Zone 4–9</li>
+                            </ul>
+                            <div class="callout warn">
+                                <strong>Rule:</strong> Plant in repeating groups
+                                of <span class="kbd">3–5</span> (same plant) for
+                                cohesion.
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Zone D — Grasses / ground layer</h3>
+                            <ul>
+                                <li>
+                                    <strong>Little Bluestem</strong> (<em
+                                        >Schizachyrium scoparium</em
+                                    >) — Zone 3–9
+                                </li>
+                                <li>
+                                    <strong>Switchgrass</strong> (<em
+                                        >Panicum virgatum</em
+                                    >) — Zone 3–9
+                                </li>
+                                <li>
+                                    <strong>Prairie Dropseed</strong> (<em
+                                        >Sporobolus heterolepis</em
+                                    >) — Zone 3–8
+                                </li>
+                            </ul>
+                            <p class="muted small">
+                                Optional groundcovers for clean edges: creeping
+                                phlox, Pennsylvania sedge (site-dependent).
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="timing">
+                    <h2>🗓️ Timing (Zone 6a)</h2>
+                    <ul>
+                        <li><strong>Spring window:</strong> May 1 – June 15</li>
+                        <li><strong>Fall window:</strong> Sep 1 – Oct 10</li>
+                        <li>
+                            <strong>Avoid:</strong> late-summer installs (heat
+                            stress), post-Oct tree installs (insufficient root
+                            establishment)
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="card" id="install">
+                    <h2>🧱 Installation steps (do this in order)</h2>
+                    <ol>
+                        <li>
+                            <strong>Mark utilities:</strong> call
+                            <span class="kbd">811</span>.
+                        </li>
+                        <li>
+                            <strong>Define bed shape:</strong> organic curve;
+                            aim ~18–25 ft long × 10–15 ft deep.
+                        </li>
+                        <li>
+                            <strong>Remove lawn:</strong> strip sod (fast) or
+                            sheet-mulch (cardboard + compost) if you have weeks.
+                        </li>
+                        <li>
+                            <strong>Prep soil:</strong> loosen 8–12", blend 2–3"
+                            compost across the entire bed (not just holes).
+                        </li>
+                        <li>
+                            <strong>Dry layout:</strong> place all pots first;
+                            don’t plant until spacing feels right.
+                        </li>
+                        <li>
+                            <strong>Plant trees correctly:</strong> find the
+                            root flare; plant slightly high (flare 1–2" above
+                            grade).
+                        </li>
+                        <li>
+                            <strong>Plant shrubs + perennials:</strong> shrubs
+                            staggered; perennials in clusters; keep ~60–70%
+                            negative space at install.
+                        </li>
+                        <li>
+                            <strong>Install irrigation:</strong> drip or soaker
+                            under mulch.
+                        </li>
+                        <li>
+                            <strong>Mulch:</strong> 2–3" shredded hardwood; keep
+                            mulch off trunks.
+                        </li>
+                    </ol>
+                    <div class="callout bad">
+                        <strong>Top failure cause:</strong> trees planted too
+                        deep. Root flare must be visible, not buried.
+                    </div>
+                </section>
+
+                <section class="card" id="water">
+                    <h2>💧 Watering (establishment year)</h2>
+                    <ul>
+                        <li>
+                            <strong>Year 1:</strong> 1 deep soak/week (skip if
+                            ~1" rain)
+                        </li>
+                        <li><strong>Per tree:</strong> 10–15 gallons weekly</li>
+                        <li><strong>Per shrub:</strong> ~5 gallons weekly</li>
+                        <li>
+                            <strong>Goal:</strong> moist soil, not swampy; deep
+                            roots, not surface dependence
+                        </li>
+                    </ul>
+                    <div class="callout">
+                        <strong>Simple system:</strong> soaker hose loop under
+                        mulch + timer = consistency without effort.
+                    </div>
+                </section>
+
+                <section class="card" id="mulch">
+                    <h2>🌲 Mulch standard</h2>
+                    <ul>
+                        <li>2–3" shredded hardwood mulch</li>
+                        <li>Keep 2–3" away from trunks and shrub crowns</li>
+                        <li>Refresh lightly each spring (don’t bury crowns)</li>
+                    </ul>
+                    <div class="callout warn">
+                        <strong>Avoid:</strong> dyed mulch and “mulch
+                        volcanoes.”
+                    </div>
+                </section>
+
+                <section class="card span2" id="layout">
+                    <h2>📐 Layout rules (to keep it looking intentional)</h2>
+                    <div class="cols">
+                        <div>
+                            <ul>
+                                <li>
+                                    <strong>Off-center trees:</strong> more
+                                    natural, less “lollipop.”
+                                </li>
+                                <li>
+                                    <strong>Stagger shrubs:</strong> no straight
+                                    lines.
+                                </li>
+                                <li>
+                                    <strong>Repeat perennials:</strong> groups
+                                    of 3–5.
+                                </li>
+                                <li>
+                                    <strong>Negative space:</strong> install
+                                    sparse; let plants mature.
+                                </li>
+                            </ul>
+                            <div class="callout">
+                                <strong>Edge discipline:</strong> a clean spade
+                                edge or metal edging makes the whole bed read as
+                                “maintained,” not “weedy.”
+                            </div>
+                        </div>
+                        <div>
+                            <pre aria-label="Simple diagram">
+Perspective from alley / dirt road:
+
+     [Tree A]       [Tree B]
+        \             /
+     (Shrubs staggered behind)
+  (Perennials + grasses in front)
+     (Curved mulch bed edge)</pre
+                            >
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="maintenance">
+                    <h2>🧰 Maintenance plan (Years 1–5)</h2>
+                    <table
+                        class="table"
+                        role="table"
+                        aria-label="Maintenance plan">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Primary focus</th>
+                                <th>What to do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td>Establishment</td>
+                                <td>
+                                    Water consistently; weed weekly; no heavy
+                                    pruning; monitor stress
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td>Shaping + fill</td>
+                                <td>
+                                    Light pruning; expand perennials; reduce
+                                    watering; replace failures early
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>3+</strong></td>
+                                <td>Stability</td>
+                                <td>
+                                    Spring mulch refresh; divide perennials
+                                    every 3–4 yrs; minimal fertilizer
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="card" id="pitfalls">
+                    <h2>⚠️ Common failure points</h2>
+                    <ul>
+                        <li>Planting trees too deep</li>
+                        <li>Overcrowding on day one</li>
+                        <li>
+                            Ignoring drainage (water pooling = root rot risk)
+                        </li>
+                        <li>No irrigation plan for year 1</li>
+                        <li>Mulch against trunks (“volcano mulching”)</li>
+                    </ul>
+                </section>
+
+                <section class="card" id="budget">
+                    <h2>💵 DIY budget (typical)</h2>
+                    <table class="table" role="table" aria-label="Budget table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Estimate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Trees (2)</td>
+                                <td>$300–600</td>
+                            </tr>
+                            <tr>
+                                <td>Shrubs (5–7)</td>
+                                <td>$250–400</td>
+                            </tr>
+                            <tr>
+                                <td>Perennials (15–25)</td>
+                                <td>$200–400</td>
+                            </tr>
+                            <tr>
+                                <td>Compost + mulch</td>
+                                <td>$300–500</td>
+                            </tr>
+                            <tr>
+                                <td>Irrigation (soaker/drip + timer)</td>
+                                <td>$75–200</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total DIY</strong></td>
+                                <td><strong>$1,200–2,000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="card" id="future">
+                    <h2>🏗️ Future garage / driveway constraint</h2>
+                    <p class="muted">
+                        If you might build a larger garage or change driveway
+                        access, plant with reversibility in mind.
+                    </p>
+                    <ul>
+                        <li>
+                            Keep canopy trees at least
+                            <strong>15 ft</strong> from any plausible future
+                            driveway line.
+                        </li>
+                        <li>Shrubs are easiest to relocate; trees are not.</li>
+                        <li>
+                            Don’t put your “forever trees” in the most buildable
+                            rectangle of the lot.
+                        </li>
+                    </ul>
+                    <div class="callout warn">
+                        If you want, I can help you sketch a “no-regrets”
+                        planting footprint by assuming a future driveway/garage
+                        corridor and placing trees outside it.
+                    </div>
+                </section>
+            </div>
+
+            <footer>
+                <div>Last updated: <span id="updated"></span></div>
+                <div class="small">
+                    Tip: Save as
+                    <span class="kbd">corner-garden-zone6a.html</span> and
+                    upload to your site. Use the Print button to save a PDF
+                    copy.
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            // Set a readable "Last updated" based on the user's local time.
+            const el = document.getElementById("updated");
+            const d = new Date();
+            el.textContent = d.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            });
+        </script>
+    </body>
+</html>
