@@ -1,39 +1,43 @@
-# Does Using AI Hurt the Environment? What the Data Actually Says
+# A Burger vs. The Internet: The Water Footprint Comparison Nobody Talks About
 
-Headlines about AI's environmental impact are everywhere, but they often blur two very different things: using AI and building AI. If you've been wondering whether asking ChatGPT a question is wrecking the planet, here's what the data actually says.
+If the water footprint of AI bothers you, good. It should get your attention. Data centers use real water, and as AI scales, that number is going up. But if that concerns you, there is a much larger number hiding in plain sight that deserves the same scrutiny.
 
-## A single AI query isn't the crisis you've heard about
+Let's talk about what is on your plate.
 
-Early estimates from the [International Energy Agency](https://www.iea.org/) suggested a single ChatGPT query used about 2.9 watt-hours of electricity, roughly 10 times more than a Google search at 0.3 watt-hours. That number made headlines and stuck.
+## One burger, 462 gallons
 
-But it's outdated. A [2025 analysis from Epoch AI](https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use) found that modern models like GPT-4o use roughly 0.3 watt-hours per query, putting them much closer to a standard Google search. OpenAI's Sam Altman has cited a similar figure of about 0.34 watt-hours per average prompt.
+Producing a single pound of beef requires roughly [1,850 gallons of water](https://watercalculator.org/news/articles/beef-king-big-water-footprints/). That covers everything the animal drinks, the water to grow its feed, and the water used in processing. A quarter-pound burger, the kind you grab at a drive-through without a second thought, costs about 462 gallons.
 
-That doesn't mean the energy cost is zero. But if you're using AI a few dozen times a day for work, you're not making a meaningfully different environmental choice than running Google searches.
+Now consider what 462 gallons means in AI terms. Generating a single AI image uses roughly [0.003 to 0.012 kWh of energy](https://arxiv.org/abs/2311.16863). Data centers use about [5 liters of water per kWh](https://thesustainableagency.com/blog/environmental-impact-of-generative-ai/) for cooling. That works out to around 0.004 to 0.016 gallons of water per image.
 
-## Training is where the real energy goes
+One burger equals the water cost of somewhere between 29,000 and 115,000 AI-generated images. One lunch.
 
-The part of AI that genuinely consumes massive energy is training, the process of building the model in the first place. [MIT researchers have explained](https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117) that training a single large model like GPT-4 can consume around 50 gigawatt-hours of electricity.
+## The daily scale
 
-That's a staggering number, but it's a one-time cost per model version, not something that repeats every time you type a prompt. And it's getting better. DeepSeek-V3, a competitive model released in late 2024, achieved roughly 95% lower energy use during training compared to earlier models of similar capability.
+A typical [20 to 50 message conversation with ChatGPT](https://blog.andymasley.com/p/a-cheat-sheet-for-conversations-about) uses roughly half a liter of water. That is less than what goes into a single bottle of water you would buy at a gas station. You could have a thousand ChatGPT conversations and still not match the water footprint of one hamburger.
 
-The industry is improving quickly. The question is whether it's improving fast enough to match the pace of adoption.
+That does not make AI's water use irrelevant. It means that if water conservation matters to you, there is an opportunity sitting right next to the one you are already paying attention to.
 
-## The water question
+## Zoom out and the gap keeps growing
 
-Energy isn't the only concern. Data centers use large amounts of water for cooling, and AI workloads are making that worse.
+The United States [slaughters roughly 90,000 cattle per day](https://bryantresearch.co.uk/insight-items/comparing-water-footprint-ai/), mostly steers and heifers raised for beef. At around 250 kilograms of usable beef per animal and 15,000 liters of water per kilogram, US beef production uses approximately 337 billion liters of water per day.
 
-How much water per query? That depends on who's measuring. OpenAI has said a typical query uses about 0.3 milliliters of water, but that only counts direct cooling at their facilities. Researchers at the [University of California, Riverside](https://oecd.ai/en/wonk/how-much-water-does-ai-consume) estimated a much higher figure of around 500 milliliters when you include water used for electricity generation and supply chain impacts.
+All of the world's data centers combined, every cloud provider, every streaming service, every AI model, use about [560 billion liters of water per year](https://bryantresearch.co.uk/insight-items/comparing-water-footprint-ai/).
 
-The honest answer is that the industry hasn't settled on a consistent way to measure this yet. What's clear is that [data centers collectively use millions of gallons of water daily](https://www.eesi.org/articles/view/data-centers-and-water-consumption), and transparency about water usage is still catching up to the conversation about energy.
+US beef production alone exceeds that figure in under two days.
 
-## Scale is the real conversation
+## The training question
 
-Here's the nuance that most headlines miss. Even though a single query uses very little energy, AI tools are now embedded in products used by hundreds of millions of people. [Google Cloud research](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference) shows that inference, the day-to-day running of AI models, now accounts for 80 to 90 percent of total AI compute simply because of the sheer volume of requests.
+Training large AI models does use serious water. Training GPT-3 [evaporated roughly 700,000 liters](https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117), enough to manufacture about 370 BMW cars. That is a real cost and worth tracking as models get larger.
 
-The environmental conversation should be about how companies power and cool their infrastructure, not about whether you should feel guilty for using a chatbot to draft an email.
+For context, though, 700,000 liters is what US beef production uses in about 0.2 seconds. The water to train one of the most discussed AI models in history would not keep American cattle farms running for a full second.
 
-## What this means for you
+Both numbers deserve attention. But only one of them is part of the public conversation right now.
 
-Using AI strategically for your business is not an environmental crisis. The energy per query is small, efficiency is improving year over year, and the real impact sits at the infrastructure level with the companies building and hosting these systems.
+## Why this matters if you care about water
 
-Stay informed. Use the tools that help you work better. And push for transparency from the companies building them rather than avoiding useful technology based on outdated headlines.
+[Livestock accounts for over a quarter of all human water use globally](https://bryantresearch.co.uk/insight-items/comparing-water-footprint-ai/). Beef and dairy are the largest contributors within that. Research suggests that [switching to plant-based alternatives could reduce water use by up to 99 percent](https://thesustainableagency.com/blog/environmental-impact-of-generative-ai/).
+
+If AI's water footprint has caught your eye, you are already thinking about the right problem. The invitation here is just to follow that concern to where the numbers actually lead. The biggest water savings available to most people have nothing to do with how many ChatGPT prompts they send. They are at the grocery store.
+
+Caring about AI's environmental impact and caring about the impact of what you eat are not competing concerns. They are the same concern applied consistently.

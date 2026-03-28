@@ -34,10 +34,10 @@ Apply to every HTML page. Do not create or update a page without verifying this 
 | Page | Schema type |
 |------|-------------|
 | `index.html` | `ProfilePage` + `Person` ✅ |
-| `about.html` | `AboutPage` |
-| `contact.html` | `ContactPage` |
-| `blog.html` | `Blog` |
-| `blog-post.html` | `BlogPosting` (include `datePublished`, `headline`, `author`) |
+| `about.html` | `AboutPage` ✅ |
+| `contact.html` | `ContactPage` ✅ |
+| `blog.html` | `Blog` ✅ |
+| `blog-post.html` | `BlogPosting` (injected dynamically by `blog.js`) ✅ |
 | `resume.html` | `ProfilePage` |
 
 ## HTML best practices

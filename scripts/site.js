@@ -1,29 +1,6 @@
-const toggle = document.querySelector('.theme-toggle');
-const icon = toggle?.querySelector('.theme-toggle__icon');
-const stored = localStorage.getItem('theme');
-const themes = ['heritage', 'brutalist', 'terminal', 'xerox', 'noir'];
-const initial = themes.includes(stored || '') ? stored : 'heritage';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.documentElement.dataset.theme = initial;
 document.documentElement.classList.add('js');
-
-const updateToggle = () => {
-  const current = document.documentElement.dataset.theme;
-  const label = current ? `Theme: ${current}. Activate to cycle theme.` : 'Activate to cycle theme.';
-  toggle?.setAttribute('aria-label', label);
-  toggle?.setAttribute('title', `Current theme: ${current}`);
-  if (icon) {
-    const shorthand = {
-      heritage: 'H',
-      brutalist: 'B',
-      terminal: 'T',
-      xerox: 'X',
-      noir: 'N',
-    };
-    icon.textContent = shorthand[current] || 'T';
-  }
-};
 
 const setCurrentYear = () => {
   const year = String(new Date().getFullYear());
@@ -32,7 +9,6 @@ const setCurrentYear = () => {
   });
 };
 
-updateToggle();
 setCurrentYear();
 
 const setupNavSnap = () => {
@@ -46,7 +22,6 @@ const setupNavSnap = () => {
     return;
   }
 
-  // Create main indicator (stays on active page)
   let indicator = nav.querySelector('.nav-pill-indicator');
   if (!indicator) {
     indicator = document.createElement('span');
@@ -55,7 +30,6 @@ const setupNavSnap = () => {
     nav.prepend(indicator);
   }
 
-  // Create ghost indicator (moves on hover)
   let ghost = nav.querySelector('.nav-pill-ghost');
   if (!ghost) {
     ghost = document.createElement('span');
@@ -74,7 +48,6 @@ const setupNavSnap = () => {
       pill.style.transition = 'none';
       pill.style.width = `${targetRect.width}px`;
       pill.style.transform = `translateX(${x}px)`;
-      // Force reflow to apply the no-transition state
       pill.offsetHeight;
       pill.style.transition = currentTransition;
     } else {
@@ -88,12 +61,10 @@ const setupNavSnap = () => {
     return;
   }
 
-  // Check if we're coming from a navigation click
   const previousPageUrl = sessionStorage.getItem('nav-previous-page');
   if (previousPageUrl) {
     sessionStorage.removeItem('nav-previous-page');
 
-    // Find the link that matches the previous page
     const previousLink = links.find(link => {
       try {
         const linkUrl = new URL(link.href, window.location.href);
@@ -105,22 +76,17 @@ const setupNavSnap = () => {
     });
 
     if (previousLink && previousLink !== activeLink) {
-      // Start at previous link position (no transition)
       updatePill(indicator, previousLink, true);
-      // Animate to active link position
       requestAnimationFrame(() => {
         updatePill(indicator, activeLink);
       });
     } else {
-      // Just set position (no animation)
       updatePill(indicator, activeLink, true);
     }
   } else {
-    // Initial load or direct visit, no animation
     updatePill(indicator, activeLink, true);
   }
 
-  // Show ghost pill on hover
   links.forEach((link) => {
     link.addEventListener('mouseenter', () => {
       ghost.classList.add('is-visible');
@@ -128,12 +94,10 @@ const setupNavSnap = () => {
     });
   });
 
-  // Hide ghost pill when mouse leaves nav
   nav.addEventListener('mouseleave', () => {
     ghost.classList.remove('is-visible');
   });
 
-  // Store current page when clicking nav links
   links.forEach((link) => {
     link.addEventListener('click', () => {
       const href = link.getAttribute('href');
@@ -141,7 +105,6 @@ const setupNavSnap = () => {
         try {
           const url = new URL(link.href, window.location.href);
           if (url.origin === window.location.origin) {
-            // Store the current page URL so next page knows where we came from
             sessionStorage.setItem('nav-previous-page', window.location.href);
           }
         } catch {}
@@ -151,7 +114,6 @@ const setupNavSnap = () => {
 };
 
 const setupPageTransitions = () => {
-  // Wait two frames so initial state is fully committed before animating in.
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       document.body.classList.add('page-ready');
@@ -198,17 +160,30 @@ const setupPageTransitions = () => {
   });
 };
 
+const setupScrollReveal = () => {
+  if (reduceMotion) return;
+
+  const sections = document.querySelectorAll('.page-content > *:nth-child(n+3)');
+  sections.forEach((el) => el.classList.add('scroll-reveal'));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  sections.forEach((el) => observer.observe(el));
+};
+
 setupNavSnap();
 setupPageTransitions();
+setupScrollReveal();
 
 window.addEventListener('resize', setupNavSnap);
 window.addEventListener('load', setupNavSnap);
-
-toggle?.addEventListener('click', () => {
-  const current = document.documentElement.dataset.theme;
-  const index = themes.indexOf(current);
-  const next = themes[(index + 1) % themes.length];
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem('theme', next);
-  updateToggle();
-});

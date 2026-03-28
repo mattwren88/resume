@@ -3,7 +3,6 @@
  * Single entry point — imports all partials.
  */
 @import "reset.css";
-@import "themes.css";
 @import "base.css";
 @import "layout.css";
 @import "nav.css";

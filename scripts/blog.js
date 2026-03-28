@@ -2,9 +2,9 @@ const posts = [
   {
     slug: 'ai-environmental-impact',
     path: 'content/blog/ai-environmental-impact.md',
-    title: 'Does Using AI Hurt the Environment? What the Data Actually Says',
-    date: 'February 15, 2026',
-    description: 'Separating fact from misinformation about AI\'s energy use, water consumption, and what actually matters.',
+    title: 'A Burger vs. The Internet: The Water Footprint Comparison Nobody Talks About',
+    date: 'March 28, 2026',
+    description: 'One burger uses more water than 29,000 AI-generated images. The numbers behind the debate nobody is having.',
   },
   {
     slug: 'seo-basics',
@@ -117,6 +117,46 @@ const loadPost = async () => {
 
     const title = container.querySelector('h1')?.textContent || entry.title;
     document.title = `${title} | Matthew Wren`;
+
+    const setMeta = (attr, key, value) => {
+      const el = document.querySelector(`meta[${attr}="${key}"]`);
+      if (el) el.setAttribute('content', value);
+    };
+
+    const postUrl = `https://mattwren.dev/blog-post.html?post=${encodeURIComponent(slug)}`;
+    setMeta('name', 'description', entry.description);
+    setMeta('property', 'og:title', `${title} | Matthew Wren`);
+    setMeta('property', 'og:description', entry.description);
+    setMeta('property', 'og:url', postUrl);
+    setMeta('name', 'twitter:title', `${title} | Matthew Wren`);
+    setMeta('name', 'twitter:description', entry.description);
+
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) {
+      canonicalEl.setAttribute('href', postUrl);
+    }
+
+    const ldJson = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description: entry.description,
+      datePublished: entry.date,
+      url: postUrl,
+      author: {
+        '@type': 'Person',
+        name: 'Matthew Wren',
+        url: 'https://mattwren.dev/',
+      },
+      publisher: {
+        '@type': 'Person',
+        name: 'Matthew Wren',
+      },
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(ldJson);
+    document.head.appendChild(script);
   } catch (error) {
     renderError(container);
   }

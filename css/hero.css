@@ -1,5 +1,9 @@
 /* hero.css — hero section, photo, copy, meta card, eyebrow, h1, role */
 
+@keyframes photo-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -10,23 +14,37 @@
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
   }
 
   & .hero-photo {
     width: var(--hero-photo-size);
     height: var(--hero-photo-size);
-    border-radius: 100vh;
-    overflow: hidden;
-    border: 4px solid var(--hero-photo-border);
-    box-shadow: var(--hero-photo-shadow);
-    transform: none;
+    position: relative;
+    flex-shrink: 0;
 
     & img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 100vh;
+      border: 4px solid var(--hero-photo-border);
+      box-shadow: var(--hero-photo-shadow);
     }
+  }
+
+  & .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 100vh;
+    border: 2px solid transparent;
+    background: conic-gradient(from 0deg, var(--accent), transparent 40%, transparent 60%, var(--accent)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: photo-ring-spin 8s linear infinite;
   }
 }
 
@@ -38,27 +56,31 @@
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   font-size: var(--text-eyebrow);
-  color: var(--muted);
+  color: var(--accent);
+  font-weight: 600;
+  font-style: normal;
+  font-family: var(--font-sans);
   margin-bottom: 12px;
 }
 
 h1 {
   font-weight: var(--type-weight-h1);
   font-size: var(--text-hero);
-  line-height: 1.05;
-  margin-bottom: 12px;
+  line-height: 1.08;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
 
 .role {
   font-size: var(--text-lg);
   color: var(--muted);
+  line-height: 1.65;
 }
 
 .hero-meta {
   background: var(--surface);
-  backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
   padding: 28px 28px 24px;
   box-shadow: var(--shadow);
@@ -77,8 +99,108 @@ h1 {
   margin-left: auto;
 }
 
+/* --- Landing Hero — the statement piece --- */
+
+@keyframes hero-gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card.landing-hero {
+  background: linear-gradient(135deg, #071e20 0%, #0a3638 20%, #0c4a4d 40%, #0d6163 60%, #0c8489 80%, #0a3638 100%);
+  background-size: 200% 200%;
+  animation: hero-gradient-shift 12s ease infinite;
+  color: #fff;
+  border-color: transparent;
+  padding: var(--space-3xl) var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+}
+
+/* Subtle gradient mesh overlay on hero */
+.card.landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(12, 132, 137, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(14, 160, 164, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.card.landing-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.card.landing-hero h1 {
+  position: relative;
+  text-wrap: balance;
+  max-width: 680px;
+  background: linear-gradient(
+    110deg,
+    #fff 0%,
+    #fff 40%,
+    rgba(167, 230, 232, 0.9) 50%,
+    #fff 60%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.card.landing-hero .role {
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  max-width: 540px;
+}
+
+.card.landing-hero .button-row {
+  position: relative;
+}
+
+.card.landing-hero .button {
+  background: #fff;
+  color: #0c4547;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card.landing-hero .button:hover {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0a2e30;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card.landing-hero .button-secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+.card.landing-hero .button-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  box-shadow: none;
+  transform: none;
+}
+
 .landing-hero h1 {
-text-wrap: balance;
+  text-wrap: balance;
 }
 
 .hero-links {

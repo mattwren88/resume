@@ -21,9 +21,7 @@
     line-height: 1.22;
   }
 
-  .noise,
-  .bg-shape,
-  .theme-toggle,
+  body::after,
   .top-nav {
     display: none !important;
   }
