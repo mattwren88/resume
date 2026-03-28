@@ -1,7 +1,6 @@
 .DS_Store
 ._*
 node_modules/
-css/dist/
 .vscode/
 projects/
 scripts/cascade-creds.json
