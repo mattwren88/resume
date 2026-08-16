@@ -1,12 +1,14 @@
 /*
  * main.css — mattwren.dev
- * Single entry point — imports all partials.
+ * Single entry point. Order matters: tokens first, element defaults next,
+ * page styles last. Built to css/dist/main.min.css by `npm run build:css`,
+ * which flattens these imports into one file — pages link the built version.
  */
-@import "reset.css";
+@import "fonts.css";
+@import "colors.css";
+@import "typography.css";
+@import "spacing.css";
+@import "motion.css";
 @import "base.css";
-@import "layout.css";
-@import "nav.css";
-@import "hero.css";
-@import "components.css";
+@import "site.css";
 @import "print.css";
-@import "responsive.css";

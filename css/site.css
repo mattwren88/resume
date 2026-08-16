@@ -1,0 +1,161 @@
+/* site.css — mattwren.dev, stripped down.
+   No cards, no gradient hero, no capability grid. Warm paper, one moss accent,
+   the grain, and a full-bleed statement band. */
+
+body{margin:0;background:var(--bg-body);color:var(--ink);overflow-x:clip}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px 100px;position:relative;z-index:1}
+
+
+.mast{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:34px 0 20px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:baseline;gap:12px;font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:1.45rem;line-height:1}
+.mark:hover{color:var(--ink)}
+.mark .mw{display:inline-flex;align-items:baseline;gap:.06em;font-style:normal;font-weight:400;font-size:1.05rem;letter-spacing:.02em;color:var(--muted);
+  transition:color var(--dur-hover) ease}
+.mark:hover .mw{color:var(--accent)}
+.mark .brace{font-size:1.15em;line-height:0}
+/* the two letters turn as one block, so the pair swaps end for end */
+.mark .letters{display:inline-block;transform-origin:50% 47%;
+  transition:transform 720ms cubic-bezier(0.34, 1.4, 0.64, 1)}
+.mark:hover .letters{transform:rotate(180deg)}
+/* and once on arrival, so the trick is not hidden behind a hover */
+@keyframes mw-turn{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.mark .letters.intro{animation:mw-turn 1100ms cubic-bezier(0.34, 1.4, 0.64, 1) 420ms both}
+@media (prefers-reduced-motion:reduce){
+  .mark .letters,.mark .letters.intro{transition:none;animation:none}
+  .mark:hover .letters{transform:none}
+}
+.nav{display:flex;gap:4px;font-size:var(--text-sm);color:var(--muted);font-weight:500}
+.nav a{padding:7px 14px;border-radius:var(--radius-pill);transition:color var(--dur-hover) ease,background var(--dur-hover) ease}
+.nav a:hover{color:var(--accent);background:var(--accent-soft)}
+.nav a[aria-current=page]{color:var(--ink);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:6px 13px}
+
+.intro{padding:96px 0 84px}
+.intro .where{display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);
+  font-size:var(--text-eyebrow);color:var(--accent);font-weight:600;margin:0 0 26px}
+.intro .where::after{content:"";height:1px;flex:1;max-width:120px;background:var(--accent);opacity:.35}
+.intro h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.04;margin:0 0 26px;max-width:19ch;letter-spacing:-.01em;text-wrap:balance}
+.intro p{margin:0;color:var(--muted);font-size:1.22rem;line-height:1.6;max-width:46ch}
+
+/* — statement band —
+   The one loud element on the page, and the only dark ground. Full-bleed via a
+   100vw pseudo-element rather than a wrapper, so the reading column is unbroken. */
+.say{position:relative;padding:80px 0 84px;margin:84px 0 0;color:var(--accent-pale);isolation:isolate}
+.say::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);
+  width:100vw;background:linear-gradient(135deg,var(--accent-deepest),var(--accent-deep));z-index:-1}
+.say .kick{text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);font-size:var(--text-eyebrow);
+  font-weight:600;color:#a8b89a;margin:0 0 24px}
+.say q{quotes:"\201C" "\201D";display:block;font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.9rem,3.7vw,2.9rem);line-height:1.16;letter-spacing:-.005em;color:#fff;max-width:19ch;margin:0 0 28px}
+.say p{margin:0;font-size:1.05rem;line-height:1.72;max-width:52ch;color:#cfdcc2}
+.say .sig{margin-top:32px;display:flex;align-items:center;gap:12px;font-family:var(--font-mono);
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a8b89a}
+.say .sig::before{content:"";width:34px;height:1px;background:currentColor}
+:root[data-theme='dark'] .say::before{background:linear-gradient(135deg,#232a1e,#33402a);
+  box-shadow:inset 0 1px 0 rgba(236,233,225,.09),inset 0 -1px 0 rgba(236,233,225,.09)}
+
+.tiles-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.tiles-head h2{font-size:clamp(1.6rem,2.8vw,2.15rem);margin:0;letter-spacing:-.005em}
+.tiles-head span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tile{border-radius:var(--radius-lg);padding:30px;display:flex;flex-direction:column;gap:14px;min-height:330px;text-decoration:none;
+  transition:transform var(--dur-card) var(--ease-out),box-shadow var(--dur-card) var(--ease-out)}
+.tile:hover{transform:translateY(var(--lift-card));box-shadow:var(--shadow-lift)}
+.tile .head{display:flex;align-items:center;gap:10px}
+.tile .head img{height:28px}
+.tile .kick{font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.tile h2{margin:0;font-style:normal}
+.tile p{margin:0;font-size:14px;line-height:1.62;flex:1}
+.tile .go{font-size:11.5px;letter-spacing:.06em}
+.t-ka{background:#f3f2f2;border:1px solid rgba(32,31,29,.16);color:#201f1d}
+.t-ka h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:34px;letter-spacing:-.015em}
+.t-ka p,.t-ka .kick,.t-ka .go{font-family:"Lora",serif}
+.t-ka .kick,.t-ka .go{color:#7d5411}
+.t-na{background:oklch(0.97 0.012 80);border:1px solid oklch(0.78 0.014 65);color:oklch(0.20 0.012 60)}
+.t-na h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:.95;letter-spacing:-.02em}
+.t-na p{font-family:"Newsreader",serif;font-size:14.5px}
+.t-na .kick,.t-na .go{font-family:"JetBrains Mono",monospace;color:oklch(0.50 0.18 25)}
+
+.sec{margin-top:76px}
+.label{text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);font-size:var(--text-eyebrow);color:var(--accent);font-weight:600;margin:0 0 20px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid var(--line);padding-top:24px}
+.three h3{font-size:.95rem;font-weight:600;margin:0 0 6px}
+.three p{margin:0;color:var(--muted);font-size:var(--text-sm);line-height:1.65}
+
+.close{margin-top:76px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.close p{margin:0;font-family:var(--font-serif);font-style:italic;font-size:1.35rem;max-width:30ch}
+.close a{color:var(--accent);font-size:var(--text-sm);font-weight:500;border-bottom:1px solid var(--accent-glow);padding-bottom:2px}
+.close a:hover{border-bottom-color:var(--accent)}
+.foot{margin-top:56px;font-size:var(--text-xs);color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot a:hover{color:var(--accent)}
+
+/* — about — */
+.who{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;padding:74px 0 8px}
+.who img{width:200px;height:200px;object-fit:cover;border-radius:18px;border:1px solid var(--card-border);box-shadow:var(--shadow-soft)}
+.who h1{font-size:2.4rem;margin:0 0 16px}
+.who p{color:var(--muted);font-size:var(--text-lg);line-height:1.7;margin:0 0 14px;max-width:52ch}
+.who p:last-child{margin:0}
+.prose{max-width:60ch;margin-top:56px}
+.prose p{line-height:1.75;margin:0 0 16px}
+.prose p:last-child{margin:0}
+/* — where I've been —
+   Years set large in the display serif and hung in their own column, with a
+   moss spine running the length of the list. The hairline-row version this
+   replaces read as a table; this reads as a career. */
+.jobs{position:relative;margin-top:4px;padding-left:0}
+.job{display:grid;grid-template-columns:132px 1fr;gap:0;padding:30px 0;border-top:1px solid var(--line);align-items:start}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job .when{grid-row:1/3;font-family:var(--font-serif);font-style:italic;font-size:2.05rem;line-height:1;
+  color:var(--accent);letter-spacing:-.01em;padding-top:2px}
+.job .when small{display:block;font-family:var(--font-mono);font-style:normal;font-size:10px;
+  letter-spacing:.12em;color:var(--muted);margin-top:9px}
+.job .body{position:relative;padding-left:30px;border-left:2px solid var(--accent-soft);transition:border-color var(--dur-card) var(--ease-out)}
+.job .body::before{content:"";position:absolute;left:-6px;top:9px;width:10px;height:10px;border-radius:50%;
+  background:var(--bg-body);border:2px solid var(--accent);transition:background var(--dur-card) var(--ease-out)}
+.job:hover .body{border-left-color:var(--accent)}
+.job:hover .body::before{background:var(--accent)}
+.job h3{margin:0 0 3px;font-size:1.18rem;font-weight:600;letter-spacing:-.005em}
+.job .role{display:block;font-size:var(--text-sm);color:var(--accent);font-weight:500;margin-bottom:10px}
+.job p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:54ch}
+.job ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.job ul li{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line);border-radius:var(--radius-pill);padding:4px 11px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;border-top:1px solid var(--line);padding-top:24px}
+.tools li{padding:6px 14px;border-radius:var(--radius-sm);background:var(--accent-soft);color:var(--accent-hover);font-size:var(--text-sm);font-weight:500;border:1px solid rgba(90,107,74,.16)}
+
+@media (max-width:860px){
+  .tiles,.three{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr;gap:24px}
+  .job{grid-template-columns:1fr;gap:14px}
+  .job .when{grid-row:auto;font-size:1.6rem}
+  .job .when small{display:inline;margin-left:10px}
+  .job .body{padding-left:20px}
+}
+
+/* The kit stops at one breakpoint, which leaves the masthead broken on a phone:
+   at 390px the wordmark, three nav links and the theme switch cannot share a
+   line, so the wordmark wraps mid-name and the switch is pushed past the right
+   edge (measured 423px of content in a 390px viewport). Below 560px the nav
+   drops to its own row, pulled left by one pill's padding so the first label
+   lines up with the margin rather than sitting indented. */
+@media (max-width:560px){
+  .mast{flex-wrap:wrap;gap:16px;padding:26px 0 16px}
+  .mark{font-size:1.25rem}
+  .nav{width:100%;margin-left:-14px}
+}
+
+/* — theme toggle — */
+.themer{background:none;border:1px solid var(--line);border-radius:var(--radius-pill);
+  width:30px;height:30px;display:grid;place-items:center;cursor:pointer;color:var(--muted);
+  margin-left:8px;transition:color var(--dur-hover) ease,border-color var(--dur-hover) ease,background var(--dur-hover) ease}
+.themer:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.themer svg{width:14px;height:14px}
+.themer .moon{display:none}
+:root[data-theme='dark'] .themer .sun{display:none}
+:root[data-theme='dark'] .themer .moon{display:block}
+
+/* On dark the two project tiles keep their own light identities — they are other
+   people's brands, effectively — so they sit as lit plates on the dark ground. */
+:root[data-theme='dark'] .tile{box-shadow:0 1px 0 rgba(236,233,225,.06)}
+:root[data-theme='dark'] .tile:hover{box-shadow:var(--shadow-lift)}
+:root[data-theme='dark'] .who img{filter:brightness(.92) saturate(.95)}

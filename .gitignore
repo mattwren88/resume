@@ -12,6 +12,15 @@ docs/contracts/
 docs/case-studies/
 review.html
 
+# Working reference material — kept locally, not published. The LinkedIn
+# screenshots in images/reference/ show a logged-in dashboard (private
+# analytics, other people's names), and no page loads any of these.
+images/reference/
+images/previews/
+images/screenshots/
+images/exports/
+.playwright-mcp/
+
 # Design system export — 2MB of UI kits, guidelines and fonts. The parts the
 # site actually uses are copied into css/ and images/.
 Matt Wren Design System/

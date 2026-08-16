@@ -3,275 +3,236 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>About | Matthew Wren</title>
     <meta
       name="description"
-      content="13+ years building websites for colleges, universities, and small businesses. CMS implementations, custom components, and tech that teams can actually maintain."
+      content="I'm Matt — building websites since 2011, mostly inside the content management systems underneath university sites. Based in Scranton, Pennsylvania."
     />
     <link rel="canonical" href="https://mattwren.dev/about.html" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Matthew Wren" />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Matthew Wren" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="About | Matthew Wren" />
-    <meta property="og:description" content="13+ years building websites for colleges, universities, and small businesses. CMS implementations, custom components, and tech that teams can actually maintain." />
+    <meta
+      property="og:description"
+      content="I'm Matt — building websites since 2011, mostly inside the content management systems underneath university sites. Based in Scranton, Pennsylvania."
+    />
     <meta property="og:url" content="https://mattwren.dev/about.html" />
     <meta property="og:image" content="https://mattwren.dev/images/mattwren.jpg" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About | Matthew Wren" />
-    <meta name="twitter:description" content="13+ years building websites for colleges, universities, and small businesses. CMS implementations, custom components, and tech that teams can actually maintain." />
+    <meta
+      name="twitter:description"
+      content="I'm Matt — building websites since 2011, mostly inside the content management systems underneath university sites. Based in Scranton, Pennsylvania."
+    />
     <meta name="twitter:image" content="https://mattwren.dev/images/mattwren.jpg" />
+
+    <!-- Theme before first paint, or the page flashes light then snaps dark. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("mw-theme");
+          if (t) document.documentElement.dataset.theme = t;
+          else if (matchMedia("(prefers-color-scheme:dark)").matches)
+            document.documentElement.dataset.theme = "dark";
+        } catch (e) {}
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&family=EB+Garamond:ital,wght@0,400..600;1,400..600&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
     <link rel="stylesheet" href="css/dist/main.min.css" />
+
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About Matthew Wren",
-      "description": "13+ years building websites for colleges, universities, and small businesses.",
-      "url": "https://mattwren.dev/about.html",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Matthew Wren",
-        "url": "https://mattwren.dev/",
-        "image": "https://mattwren.dev/images/mattwren.jpg",
-        "jobTitle": "AI Automation Specialist & Web Developer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Hannon Hill"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Scranton",
-          "addressRegion": "PA",
-          "addressCountry": "US"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/matthew-wren-98803b20/"
-        ]
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "url": "https://mattwren.dev/about.html",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Matthew Wren",
+          "url": "https://mattwren.dev/",
+          "image": "https://mattwren.dev/images/mattwren.jpg",
+          "jobTitle": "Web Development Support and Services Specialist",
+          "worksFor": { "@type": "Organization", "name": "Hannon Hill" },
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Scranton" },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Scranton",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/matthew-wren-98803b20/",
+            "https://github.com/mattwren88"
+          ]
+        }
       }
-    }
     </script>
   </head>
-  <body>
-    <main class="page">
-      <header class="top-nav" aria-label="Primary">
-        <a class="brand" href="index.html">
-          <svg width="300" height="160" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="mw-logo" aria-hidden="true">
-            <!-- Left Brace { -->
-            <path d="M55 45 C 35 45, 25 65, 25 85 L 25 90 C 25 98, 15 100, 10 100 C 15 100, 25 102, 25 110 L 25 115 C 25 135, 35 155, 55 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
 
-            <!-- Right Brace } -->
-            <path d="M305 45 C 325 45, 335 65, 335 85 L 335 90 C 335 98, 345 100, 350 100 C 345 100, 335 102, 335 110 L 335 115 C 335 135, 325 155, 305 155" stroke="currentColor" stroke-width="14" fill="none" stroke-linecap="round"/>
-
-            <!--
-                The Ambigram Logic:
-                Character 1 (M) and Character 2 (W) are the EXACT same path.
-                Character 2 is simply rotated 180 degrees around the logo center.
-            -->
-            <g id="initials-group">
-              <!-- Letter 1 (The M) -->
-              <path d="M110 135 L110 65 L140 115 L170 65 L170 135"
-                    stroke="currentColor"
-                    stroke-width="18"
-                    fill="none"
-                    stroke-linecap="square"
-                    stroke-linejoin="round"/>
-
-              <!-- Letter 2 (The W - rotated version of the M path) -->
-              <!-- We use a transform that rotates the shape 180 degrees around the center (180, 100) -->
-              <path d="M190 65 L190 135 L220 85 L250 135 L250 65"
-                    stroke="currentColor"
-                    stroke-width="18"
-                    fill="none"
-                    stroke-linecap="square"
-                    stroke-linejoin="round"/>
-            </g>
-          </svg>
+  <body class="has-grain">
+    <div class="wrap">
+      <header class="mast">
+        <a class="mark" href="index.html">
+          <span class="mw" aria-hidden="true">
+            <span class="brace">{</span><span class="letters intro">MW</span><span class="brace">}</span>
+          </span>
           Matthew Wren
         </a>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a aria-current="page" href="about.html">About</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+        <nav class="nav">
+          <a href="index.html">Work</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="mailto:hello@mattwren.dev">Say hi</a>
+          <button class="themer" id="themer" type="button" aria-label="Switch theme">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+          </button>
         </nav>
       </header>
 
-      <div class="page-content">
-        <section class="hero">
-          <div class="hero-identity">
-            <div class="hero-photo">
-              <img src="images/mattwren.webp" alt="Matthew Wren" />
-            </div>
-            <div class="hero-copy">
-              <p class="eyebrow">Background</p>
-              <h1>About</h1>
-              <p class="role">I've been building websites since 2011. Most of my work is for colleges and universities, but I take on small business projects too.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="card section">
-          <h2>What I Do</h2>
+      <section class="who">
+        <img src="images/mattwren.webp" alt="Matthew Wren" width="200" height="200" />
+        <div>
+          <h1>About</h1>
           <p>
-            I build things inside content management systems. Custom components, page templates,
-            site migrations, performance audits. The kind of work where you hand a marketing
-            team a CMS and they can actually use it without calling a developer every time
-            they want to change a headline.
-          </p>
-        </section>
-
-        <section class="card section">
-          <h2>How I Got Here</h2>
-          <p>
-            I started in radio as a digital director at Entercom, managing websites and social
-            for a handful of stations. That led to 11 years at the University of Scranton,
-            where I built their digital publications from scratch and learned how large
-            organizations manage web content — lots of stakeholders, lots of process.
+            I'm Matt. I've been building websites since 2011, which is long enough that I've watched
+            the same three ideas come back around twice.
           </p>
           <p>
-            Now I'm at Hannon Hill, where I support CMS implementations for dozens of
-            colleges and universities. I write documentation, build custom components,
-            handle technical troubleshooting, and run site audits. I've converted 20+ Figma
-            designs into production code and built 50+ CMS components with documentation
-            that non-technical editors can follow.
+            Most of my work happens inside content management systems — the unglamorous machinery
+            underneath a university's website.
           </p>
-          <p>
-            The through-line: I build things that teams can maintain on their own.
-            The goal is always to hand off something that works without ongoing developer dependency.
-          </p>
-        </section>
+        </div>
+      </section>
 
-        <section class="card section">
-          <h2>Experience Timeline</h2>
-          <div class="timeline">
-            <article>
-              <div class="timeline-heading">
-                <span class="timeline-date">Aug 2023 - Present</span>
-                <h3>Web Development Support & Services · Hannon Hill</h3>
-              </div>
-              <p>Remote (Atlanta, GA)</p>
-              <ul>
-                <li>Write and maintain technical docs for CMS workflows, APIs, and troubleshooting procedures</li>
-                <li>Handle support tickets for higher ed clients covering a wide range of technical issues</li>
-                <li>Helped overhaul the internal knowledge base to improve discoverability and accuracy</li>
-                <li>Build custom components, run site migrations, and support CMS implementations for dozens of schools</li>
-              </ul>
-            </article>
-            <article>
-              <div class="timeline-heading">
-                <span class="timeline-date">Jun 2012 - Aug 2023</span>
-                <h3>Web Designer/Developer · University of Scranton</h3>
-              </div>
-              <p>Scranton, PA</p>
-              <ul>
-                <li>Built The Scranton Journal digital publication from zero — fast, accessible, and still running</li>
-                <li>Integrated the university news site into Cascade CMS, including a mega-menu navigation system</li>
-                <li>Converted a non-responsive publication to mobile-friendly using Bootstrap and SCSS — presented the approach at Cascade User Conference 2016</li>
-                <li>Built components and templates with documentation good enough that non-technical staff could manage their own content</li>
-              </ul>
-            </article>
-            <article>
-              <div class="timeline-heading">
-                <span class="timeline-date">Aug 2011 - Jun 2012</span>
-                <h3>Digital Director · Entercom</h3>
-              </div>
-              <p>Pittston, PA</p>
-              <ul>
-                <li>Ran digital for multiple radio stations — websites, social, promotional campaigns</li>
-                <li>First role where I saw the gap between managing content and making it good — shaped how I approach every project since</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="card section">
-          <h2>Selected Projects</h2>
-          <div class="timeline">
-            <article>
-              <h3>Technical Audits (Multiple Universities)</h3>
-              <p>
-                Performance, accessibility, SEO, CMS architecture, browser compatibility. I run audits covering 400+ pages
-                using Unlighthouse and Core Web Vitals, then write up what's actually worth fixing first.
-              </p>
-            </article>
-            <article>
-              <h3>Xavier University Component Library</h3>
-              <p>
-                50+ custom CMS components across seven categories. Each one documented with architecture details,
-                field specs, rendered output, accessibility notes, and responsive behavior. The docs are the product.
-              </p>
-            </article>
-            <article>
-              <h3>Butte College CMS Integration</h3>
-              <p>
-                20+ custom components: decision trees, Instagram API feeds, responsive images, YouTube embeds,
-                drag-and-drop page builder. Built documentation so editors could build pages without filing a ticket.
-              </p>
-            </article>
-            <article>
-              <h3>Lincoln University Publications System</h3>
-              <p>
-                Search, filtering, sorting, pagination. Two workflows depending on whether content lives on a page
-                or as a downloadable file. Editors pick whichever fits.
-              </p>
-            </article>
-            <article>
-              <h3>The Scranton Journal</h3>
-              <p>
-                Built from scratch at the University of Scranton. Went through a full responsive redesign.
-                Presented the responsive redesign approach at Cascade User Conference 2016.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="card section">
-          <h2>Tools I Work With</h2>
-          <ul class="pill-list">
-            <li>Cascade CMS</li>
-            <li>Velocity</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Figma</li>
-            <li>Jira Service Desk</li>
-            <li>GitHub</li>
-            <li>Intercom</li>
-            <li>REST APIs</li>
-            <li>Web Services</li>
-          </ul>
-        </section>
-
-        <section class="card section">
-          <h2>How I Work</h2>
-          <p>
-            I document everything, keep scope tight, and write code that another
-            developer can pick up without a lengthy walkthrough. A good project
-            solves the problem it set out to solve — and doesn't create new ones.
-          </p>
-        </section>
+      <div class="prose">
+        <p>
+          I started in radio, running digital for a handful of stations out of Pittston. Then eleven
+          years at the University of Scranton, where I built their digital publication from nothing and
+          learned what it actually takes to move a page through a large organization. These days I'm at
+          Hannon Hill, supporting CMS implementations for dozens of colleges — writing docs, building
+          components, running audits, and answering the ticket that says "the thing is broken."
+        </p>
+        <p>
+          The through-line, if there is one: I try to hand things off. A component nobody can edit
+          without calling me isn't finished. The documentation is as much the deliverable as the code —
+          I've written enough of it that non-technical editors build their own pages and never file a
+          ticket at all.
+        </p>
+        <p>
+          Outside of that I make maps and calendars of Pennsylvania, which is what the front page is
+          about. Scranton is a more interesting place than it gets credit for, and both projects are
+          basically arguments for that.
+        </p>
       </div>
 
-      <footer class="site-footer">
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-          <a href="https://www.linkedin.com/in/matthew-wren-98803b20/">LinkedIn</a>
+      <section class="sec">
+        <p class="label">Where I've been</p>
+        <div class="jobs">
+          <article class="job">
+            <span class="when">'23<small>— now</small></span>
+            <div class="body">
+              <h3>Hannon Hill</h3>
+              <span class="role">Web development support &amp; services · remote</span>
+              <p>
+                Supporting Cascade implementations for dozens of colleges. Custom components, site
+                migrations, technical documentation, and the tickets that start "the thing is broken and
+                I don't know why." Three years of seeing how a hundred different institutions solve the
+                same problem badly.
+              </p>
+              <ul>
+                <li>Components</li>
+                <li>Migrations</li>
+                <li>Documentation</li>
+                <li>Support</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <span class="when">'12<small>— 2023</small></span>
+            <div class="body">
+              <h3>University of Scranton</h3>
+              <span class="role">Web designer &amp; developer · eleven years</span>
+              <p>
+                Built The Scranton Journal from nothing and kept it fast for a decade. Moved the
+                university news site into Cascade, mega-menu and all, and presented the responsive
+                redesign at Cascade User Conference 2016. This is where I learned that shipping a page is
+                the easy half.
+              </p>
+              <ul>
+                <li>The Scranton Journal</li>
+                <li>CMS integration</li>
+                <li>Responsive redesign</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <span class="when">'11<small>— 2012</small></span>
+            <div class="body">
+              <h3>Entercom</h3>
+              <span class="role">Digital director · radio</span>
+              <p>
+                Websites, social and promotions for a group of stations out of Pittston. The first job
+                where I noticed the gap between managing content and making it any good.
+              </p>
+              <ul>
+                <li>Radio</li>
+                <li>Campaigns</li>
+              </ul>
+            </div>
+          </article>
         </div>
-        <p>&copy; <span data-current-year></span> Matthew Wren</p>
-      </footer>
-    </main>
+      </section>
+
+      <section class="sec">
+        <p class="label">What I use</p>
+        <ul class="tools">
+          <li>Cascade CMS</li>
+          <li>Velocity</li>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Figma</li>
+          <li>Leaflet</li>
+          <li>React</li>
+          <li>GitHub</li>
+          <li>REST APIs</li>
+        </ul>
+      </section>
+
+      <div class="close">
+        <p>Say hello — I answer everything.</p>
+        <a href="mailto:hello@mattwren.dev">hello@mattwren.dev →</a>
+      </div>
+
+      <div class="foot">
+        <span>Scranton, Pennsylvania</span>
+        <span>
+          <a href="https://www.linkedin.com/in/matthew-wren-98803b20/">LinkedIn</a> ·
+          <a href="https://github.com/mattwren88">GitHub</a>
+        </span>
+        <span>© 2026 Matthew Wren</span>
+      </div>
+    </div>
+
     <script src="scripts/site.js"></script>
   </body>
 </html>

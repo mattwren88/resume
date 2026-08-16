@@ -1,0 +1,29 @@
+/* spacing.css — 6/12/16/24/32/48/72 step, plus radii and the shadow ramp. */
+:root{
+  --space-xs:6px;
+  --space-sm:12px;
+  --space-md:16px;
+  --space-lg:24px;
+  --space-xl:32px;
+  --space-2xl:48px;
+  --space-3xl:72px;
+
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --radius-pill:999px;
+
+  --shadow-soft:0 2px 12px rgba(15,20,25,0.05);
+  --shadow:0 4px 24px rgba(15,20,25,0.08), 0 1px 2px rgba(15,20,25,0.04);
+  --shadow-lift:0 12px 40px rgba(15,20,25,0.12), 0 2px 6px rgba(15,20,25,0.06);
+  /* Moss, matching --accent. The design system still had the outgoing teal
+     (12,132,137) here — a leftover from before the accent switch. */
+  --shadow-button-hover:0 6px 20px rgba(90,107,74,0.28);
+
+  /* layout */
+  --page-max:1100px;
+  --page-pad-block:80px;
+  --page-pad-inline:24px;
+  --card-pad:32px;
+  --measure:760px;   /* prose max-width */
+}
