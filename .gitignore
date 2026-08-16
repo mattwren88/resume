@@ -4,3 +4,15 @@ node_modules/
 .vscode/
 projects/
 scripts/cascade-creds.json
+
+# Private — never publish. GitHub Pages serves the whole repo, so anything
+# tracked here is downloadable from mattwren.dev by anyone with the URL.
+docs/linkedin/
+docs/contracts/
+docs/case-studies/
+review.html
+
+# Design system export — 2MB of UI kits, guidelines and fonts. The parts the
+# site actually uses are copied into css/ and images/.
+Matt Wren Design System/
+Matt Wren Design System.zip
