@@ -47,6 +47,9 @@ body{margin:0;background:var(--bg-body);color:var(--ink);overflow-x:clip}
 .say q{quotes:"\201C" "\201D";display:block;font-family:var(--font-serif);font-style:italic;font-weight:400;
   font-size:clamp(1.9rem,3.7vw,2.9rem);line-height:1.16;letter-spacing:-.005em;color:#fff;max-width:19ch;margin:0 0 28px}
 .say p{margin:0;font-size:1.05rem;line-height:1.72;max-width:52ch;color:#cfdcc2}
+/* The closing aside sits as its own paragraph so it reads as a footnote rather
+   than the end of the story. .say p is margin:0, so it needs the gap put back. */
+.say p + p{margin-top:18px}
 .say .sig{margin-top:32px;display:flex;align-items:center;gap:12px;font-family:var(--font-mono);
   font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#a8b89a}
 .say .sig::before{content:"";width:34px;height:1px;background:currentColor}
