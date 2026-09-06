@@ -70,24 +70,28 @@ body{margin:0;background:var(--bg-body);color:var(--ink);overflow-x:clip}
 .tile .head img{height:28px}
 .tile .kick{font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .tile .body{display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
-.tile h2{margin:0;font-style:normal}
+.tile h3{margin:0;font-style:normal}
 .tile p{margin:0;font-size:13.5px;line-height:1.55;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .tile .go{font-size:11.5px;letter-spacing:.06em}
 .t-ka{background:#f3f2f2;border:1px solid rgba(32,31,29,.16);color:#201f1d}
-.t-ka h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:34px;letter-spacing:-.015em}
+.t-ka h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:34px;letter-spacing:-.015em}
 .t-ka p,.t-ka .kick,.t-ka .go{font-family:"Lora",serif}
 .t-ka .kick,.t-ka .go{color:#7d5411}
 .t-na{background:oklch(0.97 0.012 80);border:1px solid oklch(0.78 0.014 65);color:oklch(0.20 0.012 60)}
-.t-na h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:.95;letter-spacing:-.02em}
+.t-na h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:.95;letter-spacing:-.02em}
 .t-na p{font-family:"Newsreader",serif;font-size:14.5px}
 .t-na .kick,.t-na .go{font-family:"JetBrains Mono",monospace;color:oklch(0.50 0.18 25)}
 .t-hs{background:#f3f2f2;border:1px solid rgba(32,31,29,.16);color:#201f1d}
-.t-hs h2{font-family:"Bodoni Moda",serif;font-weight:500;font-style:italic;font-size:34px;letter-spacing:-.01em;line-height:1.1}
+.t-hs h3{font-family:"Bodoni Moda",serif;font-weight:500;font-style:italic;font-size:34px;letter-spacing:-.01em;line-height:1.1}
 .t-hs p{font-family:"Inter",sans-serif;font-size:14px}
 .t-hs .kick,.t-hs .go{font-family:"Inter",sans-serif;font-weight:500;letter-spacing:.1em;color:#b68235}
 
 .sec{margin-top:0}
-.label{text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);font-size:var(--text-eyebrow);color:var(--accent);font-weight:600;margin:0 0 20px}
+/* Section eyebrow. It is a real <h2> for document structure, but an eyebrow is
+   not a display heading — the serif italic in base.css is for h1/h2 that read as
+   titles, so this one is explicitly set back to upright sans. */
+.label{font-family:var(--font-sans);font-style:normal;text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);
+  font-size:var(--text-eyebrow);color:var(--accent);font-weight:600;margin:0 0 20px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid var(--line);padding-top:24px}
 .three h3{font-size:.95rem;font-weight:600;margin:0 0 6px}
 .three p{margin:0;color:var(--muted);font-size:var(--text-sm);line-height:1.65}
@@ -100,12 +104,12 @@ body{margin:0;background:var(--bg-body);color:var(--ink);overflow-x:clip}
 .foot a:hover{color:var(--accent)}
 
 /* — about — */
-.who{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;padding:74px 0 8px}
+.who{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;padding:0}
 .who img{width:200px;height:200px;object-fit:cover;border-radius:18px;border:1px solid var(--card-border);box-shadow:var(--shadow-soft)}
 .who h1{font-size:2.4rem;margin:0 0 16px}
 .who p{color:var(--muted);font-size:var(--text-lg);line-height:1.7;margin:0 0 14px;max-width:52ch}
 .who p:last-child{margin:0}
-.prose{max-width:60ch;margin-top:56px}
+.prose{max-width:60ch;margin-top:0}
 .prose p{line-height:1.75;margin:0 0 16px}
 .prose p:last-child{margin:0}
 /* — where I've been —

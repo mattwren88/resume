@@ -10,8 +10,9 @@ Static portfolio site for Matt Wren, a web developer in Scranton PA specializing
 in CMS work for higher education. Two pages. Deployed at **mattwren.dev** via
 GitHub Pages.
 
-The site leads with two side projects — **Keystone Atlas** (a layered map of
-Pennsylvania) and **The Northeast Almanac** (a NEPA events calendar) — and treats
+The site leads with three side projects — **Keystone Atlas** (a layered map of
+Pennsylvania), **The Northeast Almanac** (a NEPA events calendar) and
+**Historical Scranton** (then-and-now street scenes on a slider) — and treats
 services as a short availability note rather than a pitch. It does not sell AI
 automation; that positioning was retired in the 2026 redesign.
 
@@ -62,14 +63,19 @@ which is gitignored and not published.
   first visit, remembers a manual choice in `localStorage` under `mw-theme`. The
   initial theme is set by an inline `<head>` script to avoid a flash.
 - **Type:** `--font-sans` Outfit for everything structural; `--font-serif` EB
-  Garamond **italic** for h1/h2 and the wordmark — the italic is the identity, do
-  not set those upright. h3 and below revert to Outfit.
-- **Spacing:** 6/12/16/24/32/48/72. **Radii:** 6/10/16/999.
+  Garamond **italic** for *display* h1/h2 and the wordmark — the italic is the
+  identity, do not set those upright. h3 and below revert to Outfit. The one
+  exception is `.label`, the small uppercase section eyebrow: it is an `<h2>` for
+  document structure but is not a display heading, so it is deliberately set back
+  to upright sans in `site.css`.
+- **Spacing:** 6/12/16/24/32/48/72. **Radii:** 6/10/16/999. Page-level rhythm
+  comes from `.wrap`'s grid `gap`, not per-section margins — don't reintroduce
+  `margin-top` on top-level sections to space them.
 - **Motion:** one curve, `--ease-out`. Nothing bounces or spins except the mark.
 - **Grain:** `class="has-grain"` on `<body>`. Multiplies on light, screens on dark.
-- **Project tiles:** `.t-ka` and `.t-na` carry Keystone Atlas's and the Almanac's
-  own type and palettes, and stay light in dark mode on purpose. Don't restyle
-  them into the site's moss.
+- **Project tiles:** `.t-ka`, `.t-na` and `.t-hs` carry Keystone Atlas's, the
+  Almanac's and Historical Scranton's own type and palettes, and stay light in
+  dark mode on purpose. Don't restyle them into the site's moss.
 
 ## SEO
 See [docs/SEO.md](docs/SEO.md). Apply it to every page — every time. Both pages
