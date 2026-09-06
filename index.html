@@ -46,11 +46,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Outfit + EB Garamond carry the site. Instrument Serif, Newsreader and
-         JetBrains Mono are used only by the two project tiles, which are set in
-         their own brands' faces. Cormorant Garamond and Lora are self-hosted. -->
+    <!-- Outfit + EB Garamond carry the site. Instrument Serif, Newsreader,
+         JetBrains Mono, Bodoni Moda and Inter are used only by the project
+         tiles, which are set in their own brands' faces. Cormorant Garamond
+         and Lora are self-hosted. -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&family=EB+Garamond:ital,wght@0,400..600;1,400..600&family=Instrument+Serif&family=Newsreader:opsz,wght@6..72,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&family=EB+Garamond:ital,wght@0,400..600;1,400..600&family=Instrument+Serif&family=Newsreader:opsz,wght@6..72,400&family=JetBrains+Mono:wght@400;500&family=Bodoni+Moda:ital,wght@0,400..600;1,400..600&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
@@ -123,25 +124,28 @@
         </p>
       </section>
 
-      <div class="tiles-head">
-        <h2>Two things I made this year</h2>
-        <span>Both free · Both about Pennsylvania</span>
-      </div>
+      <div class="tiles-block">
+        <div class="tiles-head">
+          <h2>Things I made this year</h2>
+          <span>All free · All about Pennsylvania</span>
+        </div>
 
-      <div class="tiles">
+        <div class="tiles">
         <a class="tile t-ka" href="https://keystoneatlas.org/">
           <div class="head">
             <img src="images/keystone-atlas-favicon.svg" alt="" width="28" height="28" />
             <span class="kick">A layered map of Pennsylvania</span>
           </div>
-          <h2>Keystone Atlas</h2>
-          <p>
-            Every historical marker in the state that anyone knows the location of — 2,585 of them —
-            laid over seventy layers of parks, trails, rivers, coal fields, glacial borders, mine
-            workings and towns that aren't there anymore. It started because I wanted to know what the
-            marker down the road actually said.
-          </p>
-          <span class="go">2,585 MARKERS · 70 LAYERS · KEYSTONEATLAS.ORG →</span>
+          <div class="body">
+            <h2>Keystone Atlas</h2>
+            <p>
+              Every historical marker in the state that anyone knows the location of — 2,585 of them —
+              laid over seventy layers of parks, trails, rivers, coal fields, glacial borders, mine
+              workings and towns that aren't there anymore. It started because I wanted to know what
+              the marker down the road actually said.
+            </p>
+            <span class="go">2,585 MARKERS · 70 LAYERS · KEYSTONEATLAS.ORG →</span>
+          </div>
         </a>
 
         <a class="tile t-na" href="https://mattwren88.github.io/northeast-almanac/">
@@ -149,15 +153,34 @@
             <img src="images/northeast-almanac-favicon.svg" alt="" width="28" height="28" />
             <span class="kick">NEPA events, two weeks out</span>
           </div>
-          <h2>The Northeast Almanac</h2>
-          <p>
-            Markets, gallery openings, hikes, dive bars, opera-house touring acts — everything
-            happening around here for the next two weeks, set like a weekend newspaper. It reads the
-            venues' own calendars every morning at six. There is a genuine amount going on in Scranton
-            and nobody was listing it.
-          </p>
-          <span class="go">FREE · NO ADS · NO ACCOUNT →</span>
+          <div class="body">
+            <h2>The Northeast Almanac</h2>
+            <p>
+              Markets, gallery openings, hikes, dive bars, opera-house touring acts — everything
+              happening around here for the next two weeks, set like a weekend newspaper. It reads the
+              venues' own calendars every morning at six. There is a genuine amount going on in
+              Scranton and nobody was listing it.
+            </p>
+            <span class="go">FREE · NO ADS · NO ACCOUNT →</span>
+          </div>
         </a>
+
+        <a class="tile t-hs" href="https://mattwren88.github.io/historical-scranton/">
+          <div class="head">
+            <img src="images/historical-scranton-favicon.svg" alt="" width="28" height="28" />
+            <span class="kick">Then &amp; now, same frame</span>
+          </div>
+          <div class="body">
+            <h2>Historical Scranton</h2>
+            <p>
+              Street scenes of Scranton matched against the same view on Google Street View and cut to
+              the same frame, so you can slide between them and watch a hundred years disappear from a
+              corner you drive past every day.
+            </p>
+            <span class="go">VINTAGE POSTCARDS · SLIDE TO COMPARE →</span>
+          </div>
+        </a>
+      </div>
       </div>
 
       <section class="say">
@@ -176,7 +199,7 @@
         <div class="sig">Scranton, PA · Still adding to both</div>
       </section>
 
-      <section class="sec" style="margin-top: 56px">
+      <section class="sec">
         <p class="label">If you need a hand</p>
         <div class="three">
           <div>
